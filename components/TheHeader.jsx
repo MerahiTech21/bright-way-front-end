@@ -5,7 +5,8 @@ import Link from 'next/link'
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react'
 import { BiChevronDown } from 'react-icons/bi'
 import { GiHamburgerMenu } from 'react-icons/gi'
-import {FaTimes} from 'react-icons/fa'
+import { FaTimes } from 'react-icons/fa'
+import {usePathname} from 'next/navigation'
 
 
 const products = [
@@ -21,9 +22,10 @@ function classNames(...classes) {
 
 export default function HeaderTwo() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const path = usePathname()
 
   return (
-    <header className="bg-white sticky top-0 z-50">
+    <header className="bg-white sticky top-0 z-50 shadow-lg">
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
           <a href="#" className="-m-1.5 p-1.5">
@@ -42,8 +44,8 @@ export default function HeaderTwo() {
           </button>
         </div>
         <Popover.Group className="hidden lg:flex lg:gap-x-12">
-        <Link href="/" className="text-sm font-semibold leading-6 text-gray-900">Home</Link>
-          <Link href="/about" className="text-sm font-semibold leading-6 text-gray-900">About</Link>
+        <Link href="/" className={path==='/' ?"border-b-4 border-indigo-500 text-sm font-semibold leading-6 text-gray-900":"text-sm font-semibold leading-6 text-gray-900 hover:border-b-4 border-indigo-500"}>Home</Link>
+          <Link href="/about" className={path==='/about' ?"border-b-4 border-indigo-500 text-sm font-semibold leading-6 text-gray-900":"text-sm font-semibold leading-6 text-gray-900 hover:border-b-4 border-indigo-500"}>About</Link>
           <Popover className="relative">
             <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
               Destination
@@ -79,10 +81,10 @@ export default function HeaderTwo() {
             </Transition>
           </Popover>
 
-          <a href="/services" className="text-sm font-semibold leading-6 text-gray-900">Services</a>
-          <a href="/blog" className="text-sm font-semibold leading-6 text-gray-900">Blog</a>
-          <a href="services" className="text-sm font-semibold leading-6 text-gray-900">Contact</a>
-          <a href="services" className="text-sm font-semibold leading-6 text-gray-900">Applay</a>
+          <Link href="/services" className={path==='/services' ?"border-b-4 border-indigo-500 text-sm font-semibold leading-6 text-gray-900":"text-sm font-semibold leading-6 text-gray-900 hover:border-b-4 border-indigo-500"}>Services</Link>
+          <Link href="/blog" className={path==='/blog' ?"border-b-4 border-indigo-500 text-sm font-semibold leading-6 text-gray-900":"text-sm font-semibold leading-6 text-gray-900 hover:border-b-4 border-indigo-500"}>Blog</Link>
+          <Link href="/contact" className={path==='/contact' ?"border-b-4 border-indigo-500 text-sm font-semibold leading-6 text-gray-900":"text-sm font-semibold leading-6 text-gray-900 hover:border-b-4 border-indigo-500"}>Contact</Link>
+          <Link href="/applay" className={path==='/applay' ?"border-b-4 border-indigo-500 text-sm font-semibold leading-6 text-gray-900":"text-sm font-semibold leading-6 text-gray-900 hover:border-b-4 border-indigo-500"}>Applay</Link>
           
         </Popover.Group>
       </nav>
@@ -122,7 +124,7 @@ export default function HeaderTwo() {
                         {[...products].map((item) => (
                           <Disclosure.Button
                             key={item.name}
-                            as="a"
+                            as="Link"
                             href={item.href}
                             className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                           >

@@ -5,7 +5,7 @@ import Image from "next/image"
   return (
     <div>
       <div className="md:w-4/5 md:mx-auto mt-20 p-5 ">
-        <div className="w-4/5 mx-auto ">
+        <div className="w-11-12 lg:w-4/5 mx-auto relative">
           <Image
           src="/blogimg.jpeg"
           alt="blog image"
@@ -14,7 +14,7 @@ import Image from "next/image"
             className="object-cover"
         /></div>
         <h1 className="text-2xl font-bold font-sans mt-10">Full Stack Engineer – Career Guide</h1>
-        <div className="text-white">
+        <div className="">
           
       Full-stack engineering roles have been growing in popularity over the last decade and are among the most sought-after positions in the tech job market.
 

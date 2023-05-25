@@ -1,4 +1,4 @@
-
+"use client"
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Image from 'next/image';
@@ -7,17 +7,17 @@ import Section from "./Section";
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
-    items: 3,
+    items: 4,
     slidesToSlide: 1 // optional, default to 1.
   },
   tablet: {
     breakpoint: { max: 1024, min: 464 },
-    items: 2,
+    items: 3,
     slidesToSlide: 1 // optional, default to 1.
   },
   mobile: {
     breakpoint: { max: 464, min: 0 },
-    items: 1,
+    items: 2,
     slidesToSlide: 1 // optional, default to 1.
   }
 };
@@ -28,7 +28,7 @@ const fechTeams = async() =>{
   console.log(data)
 }
 const teams= [1,2,3,4,5,6]
-const OurTeams = () =>{
+const DestinationCards = () =>{
   // fechTeams()
     return (
         <Carousel
@@ -52,15 +52,15 @@ const OurTeams = () =>{
   teams.length > 0 &&
           teams.map(team => (
             <Section key={team}>
-           <div className="w-11/12 block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
+           <div className="w-11/12 mx-auto block rounded-lg bg-white py-5 ">
             <div
               className="w-full relative overflow-hidden flex justify-center"
               data-te-ripple-init
               data-te-ripple-color="light">
               <Image
                 className="rounded-t-lg"
-                  src="/homeimg.jpg"
-                  width={300}
+                  src="/malaysia.png"
+                  width={200}
                   height={100}
                 alt="team photo" />
               <a href="#!">
@@ -88,4 +88,4 @@ const OurTeams = () =>{
     )
 }
 
-export default OurTeams
+export default DestinationCards

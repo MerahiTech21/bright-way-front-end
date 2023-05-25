@@ -5,7 +5,7 @@ import Section from './Section'
 import Link from 'next/link'
  const TheFooter = () => {
   return (   
-    <footer className="max-w-full bg-primary dark:bg-gray-800 pt-10 lg:pt-20">
+    <footer className="max-w-full bg-primary pt-10 lg:pt-20">
           <Section>
               <div className='text-center text-white text-xl lg:text-3xl font-bold'>Follow Us On</div>
               <div className='hidden lg:flex flex-row justify-center gap-10 mt-14 lg:mt-20'>

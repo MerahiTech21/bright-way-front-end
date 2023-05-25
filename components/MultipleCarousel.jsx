@@ -3,6 +3,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Image from "next/image";
 import Section from "./Section";
+import Link from "next/link";
 
 const responsive = {
   desktop: {
@@ -45,10 +46,12 @@ const Clients = () => {
       {
         ourClients.map(n=>(
           <Section key={n} className="w-full">
-            <div className="flex justify-center overflow-hidden transition ease-in-out delay-150  hover:scale-150  duration-1000">
+            <div className="flex justify-center overflow-hidden relative transition ease-in-out delay-150 ">
               <Image src="/flag.png" width={150} height={150} alt="carousel_image" className="" />
             </div>
-        <div className="text-lg text-center hover:underline" >Country Name</div>
+            <div className="text-lg text-center text-white hover:underline mt-5" >
+              <Link href="/">Country Name</Link>
+            </div>
       </Section>
         ))
       }

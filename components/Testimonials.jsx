@@ -44,7 +44,7 @@ const SingleImageCarousel = () =>{
 {
                 photos?.map((n) => (
                   <Section key={n}>
-                    <div  className="w-11/12 rounded-md bg-white p-6 text-center  md:text-left">
+                    <div  className="w-11/12 mx-auto rounded-md bg-white p-6 text-center  md:text-left">
                           <div className="md:flex md:flex-row">
                             <div className="mx-auto mb-6 flex  items-center justify-center md:mx-0 md:w-96 lg:mb-0">
                           <Image src="/bety.png" width={200} height={200} style={{ width: "auto", height:"auto" }} alt="carousel_image" className="rounded-full shadow-md dark:shadow-black/30" />

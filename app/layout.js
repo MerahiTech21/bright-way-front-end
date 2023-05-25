@@ -1,8 +1,15 @@
 import './globals.css'
-import { Inter } from 'next/font/google'
+import "react-multi-carousel/lib/styles.css";
+import { Inter,Roboto } from 'next/font/google'
 import TheHeader from '@components/TheHeader'
 import  TheFooter  from '@components/TheFooter'
 const inter = Inter({ subsets: ['latin'] })
+const roboto = Roboto({
+  weight:['100', '300', '400', '500', '700', '900'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-roboto',
+});
 
 export const metadata = {
   title: 'Create Next App',
@@ -12,7 +19,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>       
+      <body className={roboto.variable}>       
         <TheHeader />
         {children}
         <TheFooter />       
