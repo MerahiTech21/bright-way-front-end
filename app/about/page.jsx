@@ -10,8 +10,8 @@ import aboutImage from '@public/about.webp'
  const AboutPage = () => {
   return (
     <div className='relative'>
-    <div className='py-10 lg:pt-10 lg:pb-20 bg-transparent h-auto relative'>
-   <Image src="/about1.webp" fill alt='' />
+    <div className='py-10 lg:pt-10 lg:pb-20 w-full min-h-screen relative bg-black'>
+   <Image src="/about1.webp" fill={true} alt='' />
     
 </div>  
      
@@ -19,7 +19,7 @@ import aboutImage from '@public/about.webp'
       <Section>
       <div className='text-center pt-20 text-4xl text-slate-900'>About Bright way Education consultancy</div>
       </Section>
-        <div className='md:grid md:grid-cols-2 pt-5 pb-5 lg:pt-20 lg:pb-20 lg:w-4/5 lg:mx-auto text-slate-900'>
+        <div className='md:grid md:grid-cols-2 gap-4 pt-5 pb-5 lg:pt-20 lg:pb-20 lg:w-4/5 lg:mx-auto text-slate-900'>
         <Section>
         <div className=''>
         The consulting firm Line Addis was founded in June 2017 in Addis Ababa, Ethiopia, to provide the best available service by assisting Ethiopian students to pursue Bachelors and Masters degrees in countries like Poland, Turkey, Italy, Canada, Russia, and more.
@@ -41,8 +41,8 @@ import aboutImage from '@public/about.webp'
           </Section>
           <div>
           <Section>
-              <div className='relative'>
-                <Image src={aboutImage}  alt="" />
+              <div className='w-full min-h-screen relative'>
+                <Image src={aboutImage} fill={true} alt="" />
               </div>
           </Section>
           </div>

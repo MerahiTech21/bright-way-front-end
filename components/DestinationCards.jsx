@@ -52,7 +52,7 @@ const DestinationCards = () =>{
   teams.length > 0 &&
           teams.map(team => (
             <Section key={team}>
-           <div className="w-11/12 mx-auto block rounded-lg bg-white py-5 ">
+           <div className="w-11/12 mx-auto block rounded-lg bg-transparent py-5 ">
             <div
               className="w-full relative overflow-hidden flex justify-center"
               data-te-ripple-init
@@ -69,10 +69,10 @@ const DestinationCards = () =>{
             </div>
             <div className="p-6 text-slate-900">
               <h5
-                className="mb-2 text-xl text-center font-medium leading-tight">
+                className="mb-2 text-xl text-center font-medium leading-tight text-black">
                 Card title
               </h5>
-              <p className="mb-4 text-base">
+              <p className="mb-4 text-base text-black">
                 Some quick example text to build on the card title and make up the
                 bulk of the cards content.
               </p>

@@ -4,6 +4,7 @@ import Services from '@components/Services'
 import WhyChooseUs from '@components/WhyChooseUs'
 import Testimonials from '@/components/Testimonials'
 import DestinationCards from '@components/DestinationCards'
+import Section from '@components/Section'
 export default function Home() {
     return (
       <Fragment>
@@ -39,15 +40,20 @@ export default function Home() {
 
             </main>
             <Services />
-            <div className='py-10 lg:pt-10 lg:pb-20 bg-transparent'
-                style={{ backgroundImage: 'url("/bgimage.jpg")', backgroundSize: "cover" }}>
+            <div className='py-10 lg:pt-10 lg:pb-20'
+                style={{ backgroundImage: 'url("/scholar.jpeg")', backgroundSize: "contain",backgroundRepeat:"repeat" }}>
                 <div className='text-center text-3xl font-mono font-bold pb-10 lg:pb-20'>Study Abroad Packages</div>
                 
             <DestinationCards />  
             </div>          
             <WhyChooseUs />
-            <div>
-            <Testimonials />
+            <div className='bg-dark-gray py-10'>
+                <Section>
+                    <div className='text-center text-3xl font-mono font-bold pb-10 '>
+                        Testimonials
+                </div>
+                </Section>
+                <Testimonials />
             </div>
             </Fragment>
   )

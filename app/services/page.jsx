@@ -209,10 +209,14 @@ const posts = [
   return (
     <div className="pb-5 lg:pb-20">
       <div className="pt-20 pb-10 lg:pb-20 w-full">
-    <h2 className="text-center text-3xl font-bold font-mon sm:text-4xl">Services We provide</h2>
-    <p className="mt-2 text-lg text-center leading-8 font-mono">
-      Learn how to grow your business with our expert advice.
-    </p>
+        <Section>
+        <h2 className="text-center text-3xl font-bold font-mon sm:text-4xl">Services We provide</h2>
+        </Section>
+        <Section>
+        <p className="mt-2 text-lg text-center leading-8 font-mono">
+        Learn how to grow your business with our expert advice.
+      </p>
+        </Section>
    </div>
       <div className="lg:w-4/5 lg:mx-auto px-6 lg:px-8">
         
@@ -220,13 +224,13 @@ const posts = [
           {posts.map((post) => (
             <Section key={post.id} >
               <article className="flex max-w-xl flex-col items-start justify-between overflow-hidden bg-white border-2 rounded-lg shadow-xl cursor-pointer py-5 lg:py-10">
-              <a href="#" class="block text-center w-full">
+              <Link href="/" class="block text-center w-full">
               <Image alt="service icon" src="/serviceIcon.jpeg" width={250} height={100} class="mx-auto object-cover  "/>
-            </a>          
+            </Link>          
               
               <div className="group relative px-5">
                 <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
-                  <Link href={post.href}>
+                  <Link href={post.href} className="hover:text-blue-600">
                     <span className="absolute inset-0" />
                     {post.title}
                   </Link>

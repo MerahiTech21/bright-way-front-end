@@ -1,6 +1,14 @@
 import React from 'react'
-import { BsFacebook, BsTelegram, BsInstagram,BsTiktok,BsYoutube } from 'react-icons/bs'
-import { AiOutlineMail, AiFillLinkedin } from 'react-icons/ai'
+// import { BsFacebook } from '@react-icons/all-files/bs/BsFacebook'
+// import { BsTelegram} from '@react-icons/all-files/bs/BsFacebook'
+// import { BsInstagram } from '@react-icons/all-files/bs/BsInstagram'
+// import { BsTiktok} from '@react-icons/all-files/bs/BsTiktok'
+// import { BsYoutube } from '@react-icons/all-files/bs/BsYoutube'
+// import { AiOutlineMail } from '@react-icons/all-files/bs/AiOutlineMail'
+// import { AiFillLinkedin } from '@react-icons/all-files/bs/AiFillLinkedin'
+import { BsFacebook, BsTelegram, BsInstagram, BsTiktok, BsYoutube } from 'react-icons/bs'
+import { AiOutlineMail,AiFillLinkedin } from 'react-icons/ai'
+
 import Section from './Section'
 import Link from 'next/link'
  const TheFooter = () => {
