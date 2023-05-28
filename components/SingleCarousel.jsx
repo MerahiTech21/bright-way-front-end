@@ -20,6 +20,16 @@ export default function Example() {
               alt="image 3"
              fill
       />
+      <Image
+        src="/newhome.jpg"
+              alt="image 3"
+             fill
+      />
+      <Image
+        src="/homeimg.jpg"
+              alt="image 3"
+             fill
+      />
     </Carousel>
   );
 }
