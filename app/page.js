@@ -7,19 +7,16 @@ import WhyChooseUs from '@components/WhyChooseUs'
 import Testimonials from '@/components/Testimonials'
 import DestinationCards from '@components/DestinationCards'
 import Section from '@components/Section'
-// import TeamCard from '@components/TeamCard'
-import OurTeams from '@components/OurTeams'
+// import OurTeams from '@components/OurTeams'
 export default function Home() {
     return (
       <Fragment>
-    <main className="flex w-full flex-col items-center justify-between px-24 pt-5 lg:pt-24">    
+    <main className="bg-[url('/newhome.jpg')] bg-cover bg-fixed" >    
       
 <div className="relative  flex items-center overflow-hidden">
     <div className="container relative lg:flex px-3 lg:py-16 mx-auto">
-    <div className="relative   sm:hidden sm:w-1/3 lg:w-3/5">
-    <Image src="/homeimg.jpg" width={400} height={600} className="max-w-xs m-auto md:max-w-sm" alt='home page image'/>
-</div>              
-    <div className="relative z-20 flex flex-col mt-5 sm:mt-0 sm:w-2/3 lg:w-2/5">
+                
+    <div className="relative z-20 flex flex-col mt-5 sm:mt-0  lg:w-3/5 lg:px-20">
               
         <h1 className="flex flex-col text-2xl lg:text-3xl leading-8 font-mono font-bold text-gray-800 uppercase  dark:text-white">
          STUDY ABROAD & ENHANCE  YOUR CAREER PROSPECTS
@@ -37,16 +34,14 @@ export default function Home() {
             </a>
         </div>
     </div>
-    <div className="relative hidden  sm:block sm:w-1/3 lg:w-3/5">
-        <Image src="/homeimg.jpg" width={400} height={600} className="max-w-xs m-auto md:max-w-sm" alt='home page image'/>
-    </div>
+   
 </div>
 </div>
 
             </main>
             <Services />
             <div className='py-10 lg:pt-10 lg:pb-20'
-                style={{ backgroundImage: 'url("/scholar.jpeg")', backgroundSize: "contain",backgroundRepeat:"repeat" }}>
+                style={{ backgroundImage: 'url("/scholar.jpeg")', backgroundSize: "cover",backgroundRepeat:"repeat" }}>
                 <div className='text-center text-3xl font-mono font-bold pb-10 lg:pb-20'>Study Abroad Packages</div>
                 
             <DestinationCards />  

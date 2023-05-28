@@ -29,9 +29,9 @@ export default function HeaderTwo() {
     <header className="bg-white sticky top-0 z-50 shadow-lg">
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
-          <Link href="/" className="-m-1.5 p-1.5">
-            <span className="sr-only">Your Company</span>
+          <Link href="/" className="flex items-center -m-1.5 p-1.5">
             <Image className="h-8 w-auto" src="/logo.png" width={80} height={80} priority={true} alt="" />
+            <span className="ml-2 text-primary font-bold">Your Company</span>
           </Link>
         </div>
         <div className="flex lg:hidden">
