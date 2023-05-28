@@ -47,7 +47,7 @@ const SingleImageCarousel = () =>{
                     <div  className="w-11/12 mx-auto rounded-md bg-white p-6 text-center  md:text-left">
                           <div className="md:flex md:flex-row">
                             <div className="mx-auto mb-6 flex  items-center justify-center md:mx-0 md:w-96 lg:mb-0">
-                          <Image src="/bety.png" width={200} height={200}  alt="carousel_image" className="rounded-full shadow-md dark:shadow-black/30" />
+                          <Image src="/bety.png" width={250} height={250}  alt="carousel_image" className="rounded-lg shadow-md dark:shadow-black/30" />
                             </div>
                             <div className="md:ml-6">
                               <p

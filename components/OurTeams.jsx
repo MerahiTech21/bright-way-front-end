@@ -1,13 +1,14 @@
-
+"use client"
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Image from 'next/image';
 import Section from "./Section";
+import {Card, CardHeader,CardBody,Typography}  from './MaterialTailwind'
 
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
-    items: 3,
+    items: 4,
     slidesToSlide: 1 // optional, default to 1.
   },
   tablet: {
@@ -52,32 +53,26 @@ const OurTeams = () =>{
   teams.length > 0 &&
           teams.map(team => (
             <Section key={team}>
-           <div className="w-11/12 block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
-            <div
-              className="w-full relative overflow-hidden flex justify-center"
-              data-te-ripple-init
-              data-te-ripple-color="light">
-              <Image
-                className="rounded-t-lg"
-                  src="/homeimg.jpg"
-                  width={300}
-                  height={100}
-                alt="team photo" />
-              <a href="#!">
-                <div className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-[hsla(0,0%,98%,0.15)] bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100"></div>
-              </a>
-            </div>
-            <div className="p-6 text-slate-900">
-              <h5
-                className="mb-2 text-xl text-center font-medium leading-tight">
-                Card title
-              </h5>
-              <p className="mb-4 text-base">
-                Some quick example text to build on the card title and make up the
-                bulk of the cards content.
-              </p>
-              
-                </div>
+           <div className="w-11/12 mx-auto block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
+           <Card className="max-w-full overflow-hidden mb-10">
+        <CardHeader
+          floated={false}
+          shadow={false}
+          color="transparent"
+          className="m-0 rounded-lg relative h-64 "
+        >
+        <Image src="/home2.jpg" fill alt="profile-picture" />
+        </CardHeader>
+        <CardBody>
+          <Typography variant="h6" color="blue-gray">
+            UI/UX Review Check
+          </Typography>
+          <Typography color="gray" className="mt-3 font-normal">
+            Because it&apos;s about motivating the doers. Because I&apos;m here to
+            follow my dreams and inspire others.
+          </Typography>
+        </CardBody>
+      </Card>
                 </div>
           </Section>
    

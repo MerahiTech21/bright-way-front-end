@@ -15,7 +15,7 @@ const WhyChooseUs = () => {
         
     <div className='flex justify-center'>
       <Section>
-    <Image src={honesty} alt="honest icon" style={{maxWidth:100,maxHeight:100}} />
+    <Image src={honesty} alt="honest icon" style={{maxWidth:100,maxHeight:100}} className='backdrop-blur' />
       <div className='lg:mt-5 text-lg'>Honesty</div>
       </Section>
     </div>

@@ -52,9 +52,9 @@ const DestinationCards = () =>{
   teams.length > 0 &&
           teams.map(team => (
             <Section key={team}>
-           <div className="w-11/12 mx-auto block rounded-lg bg-transparent py-5 ">
+           <div className="w-11/12 mx-auto block bg-primary text-white rounded-lg py-5 opacity-70 transition duration-300 ease-in-out hover:opacity-100 ">
             <div
-              className="w-full relative overflow-hidden flex justify-center"
+              className="w-full relative overflow-hidden flex justify-center opacity-100"
               data-te-ripple-init
               data-te-ripple-color="light">
               <Image
@@ -63,19 +63,12 @@ const DestinationCards = () =>{
                   width={200}
                   height={100}
                 alt="team photo" />
-              <a href="#!">
-                <div className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-[hsla(0,0%,98%,0.15)] bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100"></div>
-              </a>
             </div>
-            <div className="p-6 text-slate-900">
+            <div className="p-6">
               <h5
-                className="mb-2 text-xl text-center font-medium leading-tight text-black">
-                Card title
+                className="mb-2 text-xl text-center font-medium leading-tight">
+               Study in USA
               </h5>
-              <p className="mb-4 text-base text-black">
-                Some quick example text to build on the card title and make up the
-                bulk of the cards content.
-              </p>
               
                 </div>
                 </div>

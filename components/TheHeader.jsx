@@ -3,18 +3,19 @@ import { Fragment, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react'
-import { BiChevronDown } from 'react-icons/bi'
-import { GiHamburgerMenu } from 'react-icons/gi'
-import { FaTimes } from 'react-icons/fa'
+import { HiChevronDown } from '@react-icons/all-files/hi/HiChevronDown'
+import { FcMenu } from '@react-icons/all-files/fc/FcMenu'
+import { FaTimes } from '@react-icons/all-files/fa/FaTimes'
+
 import {usePathname} from 'next/navigation'
 
 
-const products = [
-  { name: 'Analytics',  href:'/' },
-  { name: 'Engagement', href:'/' },
-  { name: 'Security', href:'/' },
-  { name: 'Integrations',href:'/' },
-  { name: 'Automations', href:'/' },
+const contries = [
+  { name: "Study in Poland",  href:'/destination/1' },
+  { name: "Study in Canada", href:'/destination/1' },
+  { name: "Study in China", href:'/destination/1' },
+  { name: 'Study in Italy',href:'/destination/1' },
+  { name: 'Study in USA', href:'/destination/1' },
 ]
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -40,7 +41,7 @@ export default function HeaderTwo() {
             onClick={() => setMobileMenuOpen(true)}
           >
             <span className="sr-only">Open main menu</span>
-            <GiHamburgerMenu className="h-6 w-6" aria-hidden="true" />
+            <FcMenu className="h-6 w-6" aria-hidden="true" />
           </button>
         </div>
         <Popover.Group className="hidden lg:flex lg:gap-x-12">
@@ -49,7 +50,7 @@ export default function HeaderTwo() {
           <Popover className="relative">
             <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
               Destination
-              <BiChevronDown className="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
+              <HiChevronDown className="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
             </Popover.Button>
 
             <Transition
@@ -63,12 +64,12 @@ export default function HeaderTwo() {
             >
               <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-xs overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
                 <div className="p-4">
-                  {products.map((item) => (
+                  {contries.map((item) => (
                     <div
                       key={item.name}
                       className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
                     >
-                      <div className="flex-auto">
+                      <div className="flex-auto hover:text-amber-400">
                       <Popover.Button as={Link} href={item.href} className="block font-semibold text-gray-900" >
                       {item.name}
                       <span className="absolute inset-0" />
@@ -115,20 +116,20 @@ export default function HeaderTwo() {
                     <>
                       <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 hover:bg-gray-50">
                         Destinations
-                        <BiChevronDown
+                        <HiChevronDown
                           className={classNames(open ? 'rotate-180' : '', 'h-5 w-5 flex-none')}
                           aria-hidden="true"
                         />
                       </Disclosure.Button>
                       <Disclosure.Panel className="mt-2 space-y-2">
-                        {[...products].map((item) => (
+                        {[...contries].map((item) => (
                           <Disclosure.Button
                             key={item.name}
                             as="Link"
                             href={item.href}
                             className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                           >
-                            {item.name}
+                            <span className='hover:text-amber-500'>{item.name}</span>
                           </Disclosure.Button>
                         ))}
                       </Disclosure.Panel>
