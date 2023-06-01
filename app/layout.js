@@ -3,6 +3,7 @@ import "react-multi-carousel/lib/styles.css";
 import { Inter,Roboto } from 'next/font/google'
 import TheHeader from '@components/TheHeader'
 import  TheFooter  from '@components/TheFooter'
+import TopBar from '@components/TopBar';
 const inter = Inter({ subsets: ['latin'] })
 const roboto = Roboto({
   weight:['100', '300', '400', '500', '700', '900'],
@@ -19,7 +20,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={roboto.variable} suppressHydrationWarning={true} >       
+      <body className={roboto.variable} suppressHydrationWarning={true} >
+        <TopBar/>       
         <TheHeader />
         {children}
         <TheFooter />       

@@ -10,8 +10,8 @@ module.exports = withMT({
   theme: {
     extend: {
       fontFamily: {
-        satoshi: ['Satoshi', 'sans-serif'],
-        inter: ['Inter', 'sans-serif'],
+        satoshi: ['Poppins', 'sans-serif'],
+        inter: ['Poppins', 'sans-serif'],
         mono: ['var(--font-roboto-mono)'],
       },
       colors: {
@@ -19,7 +19,9 @@ module.exports = withMT({
         'primary': '#2C3F63',
         'light': '#F2F7FE',
         'gray': '#CFE4F9',
-        'dark-gray':'#CFE4F9'
+        'dark-gray':'#CFE4F9',
+        'white': '#FFFFFF',
+        'primary-green': '#3DBE43'
       }
     },
   },

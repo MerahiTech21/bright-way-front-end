@@ -9,7 +9,6 @@ import { FaTimes } from '@react-icons/all-files/fa/FaTimes'
 
 import {usePathname} from 'next/navigation'
 
-
 const contries = [
   { name: "Study in Poland",  href:'/destination/1' },
   { name: "Study in Canada", href:'/destination/1' },
@@ -26,12 +25,11 @@ export default function HeaderTwo() {
   const path = usePathname()
 
   return (
-    <header className="bg-white sticky top-0 z-50 shadow-lg">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
-        <div className="flex lg:flex-1">
+    <header className="bg-white">
+      <nav className="shadow-2xl rounded-full mx-auto my-5 flex flex-row justify-between max-w-6xl items-center lg:px-8" aria-label="Global">
+        <div className="flex">
           <Link href="/" className="flex items-center -m-1.5 p-1.5">
-            <Image className="h-8 w-auto" src="/logo.png" width={80} height={80} priority={true} alt="" />
-            <span className="ml-2 text-primary font-bold">Your Company</span>
+            <Image className="h-8 w-auto" src="/logo2.jpg" width={10} height={10} priority={true} alt="" />
           </Link>
         </div>
         <div className="flex lg:hidden">
@@ -44,50 +42,49 @@ export default function HeaderTwo() {
             <FcMenu className="h-6 w-6" aria-hidden="true" />
           </button>
         </div>
-        <Popover.Group className="hidden lg:flex lg:gap-x-12">
-        <Link href="/" className={path==='/' ?"border-b-4 border-indigo-500 text-sm font-semibold leading-6 text-gray-900":"text-sm font-semibold leading-6 text-gray-900 hover:border-b-4 border-indigo-500"}>Home</Link>
-          <Link href="/about" className={path==='/about' ?"border-b-4 border-indigo-500 text-sm font-semibold leading-6 text-gray-900":"text-sm font-semibold leading-6 text-gray-900 hover:border-b-4 border-indigo-500"}>About</Link>
-          <Popover className="relative">
-            <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
-              Destination
-              <HiChevronDown className="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
-            </Popover.Button>
-
-            <Transition
-              as={Fragment}
-              enter="transition ease-out duration-200"
-              enterFrom="opacity-0 translate-y-1"
-              enterTo="opacity-100 translate-y-0"
-              leave="transition ease-in duration-150"
-              leaveFrom="opacity-100 translate-y-0"
-              leaveTo="opacity-0 translate-y-1"
-            >
-              <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-xs overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
-                <div className="p-4">
-                  {contries.map((item) => (
-                    <div
-                      key={item.name}
-                      className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
-                    >
-                      <div className="flex-auto hover:text-amber-400">
-                      <Popover.Button as={Link} href={item.href} className="block font-semibold text-gray-900" >
-                      {item.name}
-                      <span className="absolute inset-0" />
-                    </Popover.Button>                      
+        <Popover.Group className="flex flex-row justify-between items-center flex-[0_2_0]">
+          <div className='flex justify-between'>
+            <Link href="/" className={path==='/' ?"mx-4 flex-1 text-md font-satoshi font-semibold text-gray-900":"mx-4 flex-1 text-md font-satoshi font-semibold text-gray-900"}>Home</Link>
+            <Link href="/about" className={path==='/about' ?"mx-4 text-md font-satoshi font-semibold text-gray-900":"mx-4 text-md font-satoshi font-semibold text-gray-900"}>About</Link>
+            <Popover className="mx-4 relative">
+              <Popover.Button className="flex items-center gap-x-1 text-md font-satoshi font-semibold text-gray-900">
+                Destination
+                <HiChevronDown className="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
+              </Popover.Button>
+              <Transition
+                as={Fragment}
+                enter="transition ease-out duration-200"
+                enterFrom="opacity-0 translate-y-1"
+                enterTo="opacity-100 translate-y-0"
+                leave="transition ease-in duration-150"
+                leaveFrom="opacity-100 translate-y-0"
+                leaveTo="opacity-0 translate-y-1"
+              >
+                <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-xs overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
+                  <div className="p-4">
+                    {contries.map((item) => (
+                      <div
+                        key={item.name}
+                        className="group relative flex items-center gap-x-6 rounded-lg p-4 text-md font-satoshi hover:bg-gray-50"
+                      >
+                        <div className="flex-auto hover:text-amber-400">
+                        <Popover.Button as={Link} href={item.href} className="block font-semibold text-gray-900" >
+                        {item.name}
+                        <span className="absolute inset-0" />
+                      </Popover.Button>                      
+                        </div>
                       </div>
-                    </div>
-                  ))}
-                </div>      
-              </Popover.Panel>
-            </Transition>
-          </Popover>
-
-          <Link href="/services" className={path==='/services' ?"border-b-4 border-indigo-500 text-sm font-semibold leading-6 text-gray-900":"text-sm font-semibold leading-6 text-gray-900 hover:border-b-4 border-indigo-500"}>Services</Link>
-          <Link href="/blog" className={path==='/blog' ?"border-b-4 border-indigo-500 text-sm font-semibold leading-6 text-gray-900":"text-sm font-semibold leading-6 text-gray-900 hover:border-b-4 border-indigo-500"}>Blog</Link>
-          <Link href="/contact" className={path==='/contact' ?"border-b-4 border-indigo-500 text-sm font-semibold leading-6 text-gray-900":"text-sm font-semibold leading-6 text-gray-900 hover:border-b-4 border-indigo-500"}>Contact</Link>
-          <Link href="/applay" className={path==='/applay' ?"border-b-4 border-indigo-500 text-sm font-semibold leading-6 text-gray-900":"text-sm font-semibold leading-6 text-gray-900 hover:border-b-4 border-indigo-500"}>Applay</Link>
-          
+                    ))}
+                  </div>      
+                </Popover.Panel>
+              </Transition>
+            </Popover>
+            <Link href="/services" className={path==='/services' ?"mx-4 text-md font-satoshi font-semibold text-gray-900":"mx-4 text-md font-satoshi font-semibold text-gray-900"}>Services</Link>
+            <Link href="/blog" className={path==='/blog' ?"mx-4 text-md font-satoshi font-semibold text-gray-900":"mx-4 text-md font-satoshi font-semibold"}>Blog</Link>
+            <Link href="/contact" className={path==='/contact' ?"mx-4 text-md font-satoshi font-semibold text-gray-900":"mx-4 text-md font-satoshi font-semibold text-gray-900"}>Contact</Link>
+          </div>
         </Popover.Group>
+        <button className='border-primary-green border-2 text-white m-4 py-1 px-10 rounded-full fill-primary-green bg-primary-green text-xl'>Apply Now</button>
       </nav>
       <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
         <div className="fixed inset-0 z-10" />

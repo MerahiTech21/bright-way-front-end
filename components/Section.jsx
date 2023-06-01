@@ -8,6 +8,7 @@ function Section({ children }) {
     return (
       <section ref={ref}>
         <div
+          className='flex flex-col justify-center items-center'
           style={{
             transform: isInView ? "none" : "translatey(400px)",
             opacity: isInView ? 1 : 0,
