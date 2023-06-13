@@ -1,32 +1,31 @@
 "use client"
-import { Fragment, useState } from 'react'
+import { Fragment, useState,useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react'
 import { HiChevronDown } from '@react-icons/all-files/hi/HiChevronDown'
 import { FcMenu } from '@react-icons/all-files/fc/FcMenu'
 import { FaTimes } from '@react-icons/all-files/fa/FaTimes'
+import { usePathname } from 'next/navigation'
+import { fetchData } from '../app/url/fetch'
 
-import {usePathname} from 'next/navigation'
-
-
-const contries = [
-  { name: "Study in Poland",  href:'/destination/1' },
-  { name: "Study in Canada", href:'/destination/1' },
-  { name: "Study in China", href:'/destination/1' },
-  { name: 'Study in Italy',href:'/destination/1' },
-  { name: 'Study in USA', href:'/destination/1' },
-]
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
-
-export default function HeaderTwo() {
+export default function TheHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [destinations,setDestinations] = useState([])
   const path = usePathname()
-
+  useEffect(() => {
+    const fetchDestinatins = async() => {
+      const destinatinData = await fetchData('destinations')
+      setDestinations(destinatinData)
+    }
+    fetchDestinatins()
+},[])
   return (
-    <header className="bg-white sticky top-0 z-50 shadow-lg">
+    <Fragment>
+    <header className="bg-white top-0 z-50 shadow-lg">
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
           <Link href="/" className="flex items-center -m-1.5 p-1.5">
@@ -64,14 +63,14 @@ export default function HeaderTwo() {
             >
               <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-xs overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
                 <div className="p-4">
-                  {contries.map((item) => (
+                  {destinations.map((destination) => (
                     <div
-                      key={item.name}
+                      key={destination.id}
                       className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
                     >
                       <div className="flex-auto hover:text-amber-400">
-                      <Popover.Button as={Link} href={item.href} className="block font-semibold text-gray-900" >
-                      {item.name}
+                      <Popover.Button as={Link} href={`/destination/${destination.id}`} className="block font-semibold text-gray-900" >
+                      {destination.title}
                       <span className="absolute inset-0" />
                     </Popover.Button>                      
                       </div>
@@ -84,8 +83,9 @@ export default function HeaderTwo() {
 
           <Link href="/services" className={path==='/services' ?"border-b-4 border-indigo-500 text-sm font-semibold leading-6 text-gray-900":"text-sm font-semibold leading-6 text-gray-900 hover:border-b-4 border-indigo-500"}>Services</Link>
           <Link href="/blog" className={path==='/blog' ?"border-b-4 border-indigo-500 text-sm font-semibold leading-6 text-gray-900":"text-sm font-semibold leading-6 text-gray-900 hover:border-b-4 border-indigo-500"}>Blog</Link>
-          <Link href="/contact" className={path==='/contact' ?"border-b-4 border-indigo-500 text-sm font-semibold leading-6 text-gray-900":"text-sm font-semibold leading-6 text-gray-900 hover:border-b-4 border-indigo-500"}>Contact</Link>
-          <Link href="/applay" className={path==='/applay' ?"border-b-4 border-indigo-500 text-sm font-semibold leading-6 text-gray-900":"text-sm font-semibold leading-6 text-gray-900 hover:border-b-4 border-indigo-500"}>Applay</Link>
+          <a href="#contactarea" className={path==='/contact' ?"border-b-4 border-indigo-500 text-sm font-semibold leading-6 text-gray-900":"text-sm font-semibold leading-6 text-gray-900 hover:border-b-4 border-indigo-500"}>Contact</a>
+            <Link href="/applay" className={path === '/applay' ? "border-b-4 border-indigo-500 text-sm font-semibold leading-6 text-gray-900" : "text-sm font-semibold leading-6 text-gray-900 hover:border-b-4 border-indigo-500"}>Applay</Link>
+            <Link href="/bookconsulting" className={path === '/bookconsulting' ? "border-b-4 border-indigo-500 text-sm font-semibold leading-6 text-gray-900" : "text-sm font-semibold leading-6 text-gray-900 hover:border-b-4 border-indigo-500"}>Book free Consulting</Link>
           
         </Popover.Group>
       </nav>
@@ -122,14 +122,15 @@ export default function HeaderTwo() {
                         />
                       </Disclosure.Button>
                       <Disclosure.Panel className="mt-2 space-y-2">
-                        {[...contries].map((item) => (
+                        {
+                          destinations.map((destination) => (
                           <Disclosure.Button
-                            key={item.name}
+                            key={destination.id}
                             as="Link"
-                            href={item.href}
+                            href={`/destination/${destination.id}`}
                             className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                           >
-                            <span className='hover:text-amber-500'>{item.name}</span>
+                            <span className='hover:text-amber-500'>{destination.title}</span>
                           </Disclosure.Button>
                         ))}
                       </Disclosure.Panel>
@@ -140,12 +141,14 @@ export default function HeaderTwo() {
                 <Link href="/Services" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Services</Link>
                 <Link href="/blog" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Blog</Link>
                 <Link href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Contact</Link>
-                <Link href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Applay</Link>
+                  <Link href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Applay</Link>
+                  <Link href="/bookconsulting" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Book free Consulting</Link>
               </div>
             </div>
           </div>
         </Dialog.Panel>
       </Dialog>
-    </header>
+      </header>
+      </Fragment>
   )
 }

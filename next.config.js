@@ -4,7 +4,16 @@ const nextConfig = {
         'react-icons': {
           transform: 'react-icons/{{member}}',
         },
-       },
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'brightapi.merahitechnologies.com',
+        pathname: '/images/**',
+      },
+    ],
+  },
 }
 
 module.exports = nextConfig

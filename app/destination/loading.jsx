@@ -1,5 +1,4 @@
 import React from 'react'
-import spinner from '../public/loading.gif'
 import Image from 'next/image'
 const loading = () => {
   return (

@@ -4,7 +4,8 @@ import "react-multi-carousel/lib/styles.css";
 import Image from "next/image";
 import Section from "./Section";
 import Link from "next/link";
-
+import url from "../app/url";
+import {use} from 'react'
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
@@ -22,8 +23,13 @@ const responsive = {
     slidesToSlide: 1, // optional, default to 1.
   },
 };
-const ourClients = [1,2,3,4,5]
+const fetchDestinations = async() =>{
+  const res = await fetch(`${url}/destinations`)
+  return await res.json();
+}
+const destinationData = fetchDestinations()
 const Clients = () => {
+  const destinatoins = use(destinationData)
   return (
     <Carousel
       swipeable={true}
@@ -44,13 +50,13 @@ const Clients = () => {
     >
     
       {
-        ourClients.map(n=>(
-          <Section key={n} className="w-full">
+        destinatoins.map(destinatoin=>(
+          <Section key={destinatoin.id} className="w-full">
             <div className="flex justify-center overflow-hidden relative transition ease-in-out delay-150 ">
               <Image src="/flag.png" width={150} height={150} alt="carousel_image" className="" />
             </div>
             <div className="text-lg text-center text-white hover:underline mt-5" >
-              <Link href="/">Country Name</Link>
+              <Link href={`/destinatoin/${destinatoin.id}`}>{destinatoin.title}</Link>
             </div>
       </Section>
         ))

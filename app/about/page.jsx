@@ -1,13 +1,12 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client"
 import React from 'react'
-import Section from '@components/Section'
-import MultipleCarousel from '@components/MultipleCarousel'
-import OurTeams from '@components/OurTeams'
-import Testimonials from "@components/Testimonials"
-import WhyChooseUs from '@components/WhyChooseUs'
-import Image from 'next/image'
-import SingleCarousel from '@components/SingleCarousel'
+import Section from '../../components/Section'
+import OurTeams from '../../components/OurTeams'
+import Testimonials from "../../components/Testimonials"
+import WhyChooseUs from '../../components/WhyChooseUs'
+import SingleCarousel from '../../components/SingleCarousel'
+import Packages from '../../components/Packages'
  const AboutPage = () => {
   return (
     
@@ -36,7 +35,7 @@ import SingleCarousel from '@components/SingleCarousel'
           </div>
         </div>
        
-       
+       <Packages />
         
       
       <Section>
@@ -46,20 +45,16 @@ import SingleCarousel from '@components/SingleCarousel'
         </div>
         </Section>
       <WhyChooseUs />
-      <div className='bg-primary text-4xl lg:mt-5 my-10 pb-10'>
-        <Section>
-        <div className='text-center font-mono pt-10 pb-10 text-white'>Our Study Abroad Destinations</div>
+      <div className='bg-primary'>
+      <div className='w-11/12 mx-auto py-10 '>
+      <Section>
+        <div className='text-center text-4xl font-mono py-10 text-white'> Our Teams</div>
         </Section>
-      <MultipleCarousel />
+    <OurTeams />
+    </div>
       </div>
-      <div className='w-11/12 mx-auto my-10'>
-        <Section>
-          <div className='text-center text-4xl font-mono py-10'> Our Teams</div>
-          </Section>
-      <OurTeams />
-      </div>
-      <div className='pt-10 pb-10 bg-dark-gray'>
-        <div className='w-11/12 lg:w-4/5 mx-auto'>
+      <div className='pb-10 bg-dark-gray'>
+        <div className='w-11/12 mx-auto'>
         <Section>
         <div className='text-center text-4xl font-mono py-10'> Testimonials</div>
           </Section>

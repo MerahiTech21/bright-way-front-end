@@ -18,7 +18,7 @@ import Link from 'next/link'
     <footer className="max-w-full bg-primary pt-10 lg:pt-20">
           <Section>
               <div className='text-center text-white text-xl lg:text-3xl font-bold'>Follow Us On</div>
-              <div className='hidden lg:flex flex-row justify-center gap-10 mt-14 lg:mt-20'>
+              <div className='hidden lg:flex flex-row justify-center gap-10 mt-14 lg:mt-20' id="contactarea">
               <a href="/" className='rounded-full p-2 lg:p-5 bg-blue-800 transition ease-in-out delay-150  hover:rotate-12  duration-1000 '> <FaFacebookSquare size={50}  className='text-white' /></a>                  
               <a href="/" className='rounded-full p-2 lg:p-5 bg-blue-400 transition ease-in-out delay-150  hover:rotate-12  duration-1000'> <ImTelegram size={50} className='text-white' /></a>                  
               <a href="/" className='rounded-full p-2 lg:p-5 bg-black transition ease-in-out delay-150  hover:rotate-12  duration-1000'> <FaInstagramSquare size={50} className='text-white' /></a>                    
@@ -30,7 +30,7 @@ import Link from 'next/link'
                   
               </div>
               
-              <div className='w-full flex flex-row justify-center lg:hidden gap-2 mt-5'>
+              <div className='w-full flex flex-row justify-center lg:hidden gap-2 mt-5' id="contactarea">
               <a href="/" className='rounded-full p-2 lg:p-5 bg-blue-800 transition ease-in-out delay-150  hover:rotate-12  duration-1000 '> <FaFacebookSquare size={20}  className='text-white' /></a>
               <a href="/" className='rounded-full p-2 lg:p-5 bg-blue-400 transition ease-in-out delay-150  hover:rotate-12  duration-1000'> <ImTelegram size={20} className='text-white' /></a>
               <a href="/" className='rounded-full p-2 lg:p-5 bg-black transition ease-in-out delay-150  hover:rotate-12  duration-1000'> <FaInstagramSquare size={20} className='text-white' /></a>

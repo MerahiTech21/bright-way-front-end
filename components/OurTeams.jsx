@@ -3,7 +3,9 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Image from 'next/image';
 import Section from "./Section";
-import {Card, CardHeader,CardBody,Typography}  from './MaterialTailwind'
+import { Card, CardHeader, CardBody, Typography } from './MaterialTailwind'
+import url from "../app/url";
+import {use} from 'react'
 
 const responsive = {
   desktop: {
@@ -24,13 +26,13 @@ const responsive = {
 };
   
 const fechTeams = async() =>{
-  const res = await fetch('https://jsonplaceholder.typicode.com/users')
-  const data = await res.json();
-  console.log(data)
+  const res = await fetch(`${url}/get_teams`)
+ return await res.json();
+
 }
-const teams= [1,2,3,4,5,6]
-const OurTeams = () =>{
-  // fechTeams()
+const activeTeams = fechTeams()
+export default function OurTeams(){
+  const teams = use(activeTeams)
     return (
         <Carousel
   swipeable={true}
@@ -61,15 +63,14 @@ const OurTeams = () =>{
           color="transparent"
           className="m-0 rounded-lg relative h-64 "
         >
-        <Image src="/home2.jpg" fill alt="profile-picture" />
+        <Image src={team.photo} fill alt="profile-picture" />
         </CardHeader>
         <CardBody>
           <Typography variant="h6" color="blue-gray">
-            UI/UX Review Check
+            {team.f_name+" "+team.m_name}
           </Typography>
           <Typography color="gray" className="mt-3 font-normal">
-            Because it&apos;s about motivating the doers. Because I&apos;m here to
-            follow my dreams and inspire others.
+            {team.quote}
           </Typography>
         </CardBody>
       </Card>
@@ -83,4 +84,4 @@ const OurTeams = () =>{
     )
 }
 
-export default OurTeams
+ 

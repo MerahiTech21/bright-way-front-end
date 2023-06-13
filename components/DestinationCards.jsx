@@ -3,7 +3,8 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Image from 'next/image';
 import Section from "./Section";
-
+import url from "../app/url";
+import {use} from 'react'
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
@@ -22,14 +23,13 @@ const responsive = {
   }
 };
   
-const fechTeams = async() =>{
-  const res = await fetch('https://jsonplaceholder.typicode.com/users')
-  const data = await res.json();
-  console.log(data)
+const fetchDestinations = async() =>{
+  const res = await fetch(`${url}/destinations`)
+  return await res.json();
 }
-const teams= [1,2,3,4,5,6]
+const destinationData = fetchDestinations()
 const DestinationCards = () =>{
-  // fechTeams()
+  const destinations = use(destinationData)
     return (
         <Carousel
   swipeable={true}
@@ -49,9 +49,9 @@ const DestinationCards = () =>{
   itemClass="carousel-item-padding-40-px"
 >
 {
-  teams.length > 0 &&
-          teams.map(team => (
-            <Section key={team}>
+  destinations.length > 0 &&
+  destinations.map(destination => (
+            <Section key={destination}>
            <div className="w-11/12 mx-auto block bg-primary text-white rounded-lg py-5 opacity-70 transition duration-300 ease-in-out hover:opacity-100 ">
             <div
               className="w-full relative overflow-hidden flex justify-center opacity-100"
@@ -59,7 +59,7 @@ const DestinationCards = () =>{
               data-te-ripple-color="light">
               <Image
                 className="rounded-t-lg"
-                  src="/malaysia.png"
+                  src={destination.photo}
                   width={200}
                   height={100}
                 alt="team photo" />
@@ -67,7 +67,7 @@ const DestinationCards = () =>{
             <div className="p-6">
               <h5
                 className="mb-2 text-xl text-center font-medium leading-tight">
-               Study in USA
+               {destination.title}
               </h5>
               
                 </div>
