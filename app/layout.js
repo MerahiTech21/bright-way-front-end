@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-sync-scripts */
 import { Suspense } from "react";
 import './globals.css'
 import { Inter } from 'next/font/google'
@@ -27,8 +28,16 @@ export default function RootLayout({ children }) {
         <Suspense fallback={<Loading />}>{children}</Suspense>
         {
           <TheFooter />  
-       }     
+        }  
+        
+          <script src="https://cdn.botpress.cloud/webchat/v0/inject.js"></script>
+          <script src="https://mediafiles.botpress.cloud/d55d4fce-33fd-4014-967d-f45258752372/webchat/config.js" defer></script>
+     
       </body>
+      {
+        // <script src="https://cdn.botpress.cloud/webchat/v0/inject.js"></script>
+        // <script src="https://mediafiles.botpress.cloud/d55d4fce-33fd-4014-967d-f45258752372/webchat/config.js" defer></script>
+   }
     </html>
   )
 }
