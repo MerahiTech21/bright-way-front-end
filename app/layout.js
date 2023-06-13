@@ -1,6 +1,5 @@
 import { Suspense } from "react";
 import './globals.css'
-import 'react-day-picker/dist/style.css';
 import { Inter } from 'next/font/google'
 import TopBar from '../components/TopBar'
 import TheHeader from '../components/TheHeader';

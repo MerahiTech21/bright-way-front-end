@@ -3,8 +3,9 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Image from "next/image";
 import Section from "./Section";
-import url from "../app/url";
-import {use} from 'react'
+// import { use } from 'react'
+import useSWR from 'swr'
+import url from '../app/url'
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
@@ -22,15 +23,13 @@ const responsive = {
     slidesToSlide: 1 // optional, default to 1.
   }
 };
-const fechTestimonials = async() =>{
-  const res = await fetch(`${url}/testimonials`)
- return await res.json();
-
-}
-const testimonialData = fechTestimonials()
 
 const SingleImageCarousel = () => {
-  const testimonials = use(testimonialData)
+  const fetcher = (...args) => fetch(...args).then(res => res.json());
+  const { data, error, isLoading } = useSWR(`${url}/testimonials`, fetcher)
+  if (error) {
+      throw new Error('faild to fech testimonials')
+    }
     return (
         <Carousel
   swipeable={true}
@@ -49,8 +48,8 @@ const SingleImageCarousel = () => {
   dotListClass="custom-dot-list-style"
   itemClass="carousel-item-padding-40-px"
 >
-{
-  testimonials?.map((testimonial) => (
+{ data?.length > 0 &&
+  data.map((testimonial) => (
                   <Section key={testimonial.id}>
                     <div  className="w-11/12 mx-auto rounded-md bg-white p-6 text-center  md:text-left">
                           <div className="md:flex md:flex-row">

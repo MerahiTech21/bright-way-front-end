@@ -4,8 +4,9 @@ import "react-multi-carousel/lib/styles.css";
 import Image from 'next/image';
 import Section from "./Section";
 import { Card, CardHeader, CardBody, Typography } from './MaterialTailwind'
-import url from "../app/url";
-import {use} from 'react'
+// import { use } from 'react'
+import useSWR from 'swr'
+import url from '../app/url'
 
 const responsive = {
   desktop: {
@@ -28,11 +29,17 @@ const responsive = {
 const fechTeams = async() =>{
   const res = await fetch(`${url}/get_teams`)
  return await res.json();
-
 }
-const activeTeams = fechTeams()
+// const activeTeams = fechTeams()
+
+
 export default function OurTeams(){
-  const teams = use(activeTeams)
+  // const teams = use(activeTeams)
+  const fetcher = (...args) => fetch(...args).then(res => res.json());
+const { data, error, isLoading } = useSWR(`${url}/get_teams`, fetcher)
+if (error) {
+    throw new Error('faild to fech teams')
+  }
     return (
         <Carousel
   swipeable={true}
@@ -52,8 +59,8 @@ export default function OurTeams(){
   itemClass="carousel-item-padding-40-px"
 >
 {
-  teams.length > 0 &&
-          teams.map(team => (
+  data?.length > 0 &&
+  data.map(team => (
             <Section key={team}>
            <div className="w-11/12 mx-auto block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
            <Card className="max-w-full overflow-hidden mb-10">

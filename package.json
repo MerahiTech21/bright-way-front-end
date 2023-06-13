@@ -9,12 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@contentful/f36-components": "^4.42.0",
     "@headlessui/react": "^1.7.14",
     "@material-tailwind/react": "^2.0.1",
     "@react-icons/all-files": "^4.1.0",
     "autoprefixer": "10.4.14",
-    "date-fns": "^2.30.0",
     "eslint": "8.40.0",
     "eslint-config-next": "13.4.2",
     "framer-motion": "^10.12.10",
@@ -22,9 +20,9 @@
     "next-share": "^0.20.0",
     "postcss": "8.4.23",
     "react": "18.2.0",
-    "react-day-picker": "^8.7.1",
     "react-dom": "18.2.0",
     "react-multi-carousel": "^2.8.3",
+    "swr": "^2.1.5",
     "tailwindcss": "3.3.2"
   },
   "devDependencies": {

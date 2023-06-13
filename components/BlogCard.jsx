@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Section from './Section';
   
-const Blogs = async ({blogs}) => {
+const BlogsCard = async ({Card}) => {
   return (
     <div className="bg-light py-0 sm:py-5">
       <div className="px-6 lg:px-8">
@@ -40,4 +40,4 @@ const Blogs = async ({blogs}) => {
   )
 }
 
-export default Blogs
+export default BlogsCard

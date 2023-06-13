@@ -7,22 +7,20 @@ import { HiChevronDown } from '@react-icons/all-files/hi/HiChevronDown'
 import { FcMenu } from '@react-icons/all-files/fc/FcMenu'
 import { FaTimes } from '@react-icons/all-files/fa/FaTimes'
 import { usePathname } from 'next/navigation'
-import { fetchData } from '../app/url/fetch'
+import useSWR from 'swr'
+import url from '../app/url'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 export default function TheHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [destinations,setDestinations] = useState([])
   const path = usePathname()
-  useEffect(() => {
-    const fetchDestinatins = async() => {
-      const destinatinData = await fetchData('destinations')
-      setDestinations(destinatinData)
+  const fetcher = (...args) => fetch(...args).then(res => res.json());
+  const { data, error, isLoading } = useSWR(`${url}/destinations`, fetcher)
+  if (error) {
+      throw new Error('faild to fech destinations')
     }
-    fetchDestinatins()
-},[])
   return (
     <Fragment>
     <header className="bg-white top-0 z-50 shadow-lg">
@@ -63,7 +61,8 @@ export default function TheHeader() {
             >
               <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-xs overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
                 <div className="p-4">
-                  {destinations.map((destination) => (
+                    {data?.length > 0&&
+                      data.map((destination) => (
                     <div
                       key={destination.id}
                       className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
@@ -122,8 +121,8 @@ export default function TheHeader() {
                         />
                       </Disclosure.Button>
                       <Disclosure.Panel className="mt-2 space-y-2">
-                        {
-                          destinations.map((destination) => (
+                        {data?.length > 0&&
+                          data.map((destination) => (
                           <Disclosure.Button
                             key={destination.id}
                             as="Link"
@@ -141,7 +140,7 @@ export default function TheHeader() {
                 <Link href="/Services" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Services</Link>
                 <Link href="/blog" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Blog</Link>
                 <Link href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Contact</Link>
-                  <Link href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Applay</Link>
+                  <Link href="/applay" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Applay</Link>
                   <Link href="/bookconsulting" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Book free Consulting</Link>
               </div>
             </div>
