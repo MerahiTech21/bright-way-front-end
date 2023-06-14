@@ -1,5 +1,5 @@
 "use client"
-import { Fragment, useState,useEffect } from 'react'
+import { Fragment, useState,useEffect,use } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react'
@@ -7,20 +7,23 @@ import { HiChevronDown } from '@react-icons/all-files/hi/HiChevronDown'
 import { FcMenu } from '@react-icons/all-files/fc/FcMenu'
 import { FaTimes } from '@react-icons/all-files/fa/FaTimes'
 import { usePathname } from 'next/navigation'
-import useSWR from 'swr'
+// import useSWR from 'swr'
 import url from '../app/url'
-
+const getDestinations = async () => {
+  const res = await fetch(`${url}/destinations`, {cache:"no-store"})
+    if(!res.ok){
+        throw new Error('faild to fetch data')
+    }
+    return await res.json()
+}
+const destinationData = getDestinations()
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 export default function TheHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const path = usePathname()
-  const fetcher = (...args) => fetch(...args).then(res => res.json());
-  const { data, error, isLoading } = useSWR(`${url}/destinations`, fetcher)
-  if (error) {
-      throw new Error('faild to fech destinations')
-    }
+ const data = use(destinationData)
   return (
     <Fragment>
     <header className="bg-white top-0 z-50 shadow-lg">

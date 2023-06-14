@@ -3,7 +3,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Image from "next/image";
 import Section from "./Section";
-// import { use } from 'react'
+import { use } from 'react'
 import useSWR from 'swr'
 import url from '../app/url'
 const responsive = {
@@ -23,13 +23,16 @@ const responsive = {
     slidesToSlide: 1 // optional, default to 1.
   }
 };
-
-const SingleImageCarousel = () => {
-  const fetcher = (...args) => fetch(...args).then(res => res.json());
-  const { data, error, isLoading } = useSWR(`${url}/testimonials`, fetcher)
-  if (error) {
-      throw new Error('faild to fech testimonials')
+const getDestinations = async () => {
+  const res = await fetch(`${url}/testimonials`, {cache:"no-store"})
+    if(!res.ok){
+        throw new Error('faild to fetch data')
     }
+    return await res.json()
+}
+const destinationDatas = getDestinations()
+const SingleImageCarousel = () => {
+  const data = use(destinationDatas)
     return (
         <Carousel
   swipeable={true}

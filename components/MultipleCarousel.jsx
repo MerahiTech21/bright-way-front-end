@@ -4,8 +4,8 @@ import "react-multi-carousel/lib/styles.css";
 import Image from "next/image";
 import Section from "./Section";
 import Link from "next/link";
-// import { use } from 'react'
-import useSWR from 'swr'
+import { use } from 'react'
+// import useSWR from 'swr'
 import url from '../app/url'
 const responsive = {
   desktop: {
@@ -24,18 +24,14 @@ const responsive = {
     slidesToSlide: 1, // optional, default to 1.
   },
 };
-// const fetchDestinations = async() =>{
-//   const res = await fetch(`${url}/destinations`)
-//   return await res.json();
-// }
-// const destinationData = fetchDestinations()
+const fetchDestinations = async() =>{
+  const res = await fetch(`${url}/destinations`)
+  return await res.json();
+}
+const destinationData = fetchDestinations()
 const Clients = () => {
-  // const destinatoins = use(destinationData)
-  const fetcher = (...args) => fetch(...args).then(res => res.json());
-  const { data, error, isLoading } = useSWR(`${url}/destinations`, fetcher)
-  if (error) {
-      throw new Error('faild to fech destinations')
-    }
+  const destinatoins = use(destinationData)
+ 
   return (
     <Carousel
       swipeable={true}
@@ -55,8 +51,8 @@ const Clients = () => {
       itemClass="carousel-item-padding-40-px"
     >
     
-      {data?.length > 0 &&
-        data.map(destinatoin=>(
+      {destinatoins?.length > 0 &&
+        destinatoins.map(destinatoin=>(
           <Section key={destinatoin.id} className="w-full">
             <div className="flex justify-center overflow-hidden relative transition ease-in-out delay-150 ">
               <Image src="/flag.png" width={150} height={150} alt="carousel_image" className="" />

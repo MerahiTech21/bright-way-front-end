@@ -2,13 +2,13 @@ import React from 'react'
 import Image from 'next/image'
 // import { fetchData } from '@app/url/fetch'
 import url from '../app/url'
-const getDestinatins = async() =>{
+async function getDestinatoins () {
     const res = await fetch(`${url}/destinations`,{cache:"no-store"})
-   return await res.json();
+   return  res.json();
   
   }
-const Packages = async () => {
-    const destinations = await getDestinatins()
+async function Packages() {
+    const destinations = await getDestinatoins()
     return (
         <div className='min:w-screen bg-[url(/whobg.jpg)] flex flex-col justify-center items-center'>
             <div className='text-center text-3xl text-white font-mono font-bold py-10'>Study Abroad Packages</div>

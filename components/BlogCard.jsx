@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Section from './Section';
   
-const BlogsCard = async ({Card}) => {
+const BlogsCard = async ({blogs}) => {
   return (
     <div className="bg-light py-0 sm:py-5">
       <div className="px-6 lg:px-8">
@@ -20,7 +20,7 @@ const BlogsCard = async ({Card}) => {
            {
               blogs && blogs.map((blog) => (
                 <Section key={blog.id}>
-              <div className="w-full rounded-2xl p-5 flex gap-10 border-solid border-2 border-primary shadow-2xl">
+              <div className="w-full rounded-2xl p-5 md:flex gap-10 border-solid border-2 border-primary shadow-2xl">
               <Image src={blog.photos[0]?.path} alt='' width={300} height={50}/>
               <div className="flex flex-col items-start">
                 <p className="font-bold text-3xl text-primary my-5">{blog.title}</p>
