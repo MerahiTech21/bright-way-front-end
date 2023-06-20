@@ -40,7 +40,7 @@ export default function Home() {
  <Packages />
 
             </main>
-            <Services />
+            {/* <Services />
             <WhyChooseUs />
             {
                 <div className='bg-primary py-10 lg:py-20'>
@@ -59,7 +59,7 @@ export default function Home() {
             {
                 // view status
                 <ApplicationStatus show={isOpen} setShow={closeModal} />
-            }
+            } */}
 
            
             </div>

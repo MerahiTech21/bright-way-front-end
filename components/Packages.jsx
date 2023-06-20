@@ -1,20 +1,31 @@
-import React from 'react'
+'use client'
+import React, { useEffect } from 'react'
 import Image from 'next/image'
-// import { fetchData } from '@app/url/fetch'
 import url from '../app/url'
-async function getDestinatoins () {
-    const res = await fetch(`${url}/destinations`,{cache:"no-store"})
-   return  res.json();
-  
-  }
+import { useQuery } from '@tanstack/react-query'
+import axios from 'axios'
+
+const getDestinations = async () => {
+    const res = await axios.get(`${url}/destinations`).then((response) => response.data)
+    return res
+}
 async function Packages() {
-    const destinations = await getDestinatoins()
+    
+    const { data, isLoading, isFetching, error, isSuccess } = useQuery({
+        queryKey: ["destinations"],
+        queryFn: () => getDestinations(),
+      });
+      useEffect(() => {
+        if(isSuccess && data) {
+          console.log(data)
+        }
+      }, [isSuccess, data])
     return (
         <div className='min:w-screen bg-[url(/whobg.jpg)] flex flex-col justify-center items-center'>
             <div className='text-center text-3xl text-white font-mono font-bold py-10'>Study Abroad Packages</div>
             <div className='grid grid-cols-2 gap-4 py-4 px-4 md:grid-cols-4 md:gap-10 md:px-28 md:py-10'>
                 {
-                    destinations && destinations.map((destination) => (
+                    data && data?.map((destination) => (
                         <div key={destination.id} className='flex flex-col justify-start items-center shadow-2xl rounded-md'>
                             <Image
                             className="rounded-t-lg my-3"

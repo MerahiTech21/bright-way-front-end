@@ -7,23 +7,31 @@ import { HiChevronDown } from '@react-icons/all-files/hi/HiChevronDown'
 import { FcMenu } from '@react-icons/all-files/fc/FcMenu'
 import { FaTimes } from '@react-icons/all-files/fa/FaTimes'
 import { usePathname } from 'next/navigation'
+import axios from 'axios'
 // import useSWR from 'swr'
 import url from '../app/url'
+import { useQuery } from '@tanstack/react-query'
 const getDestinations = async () => {
-  const res = await fetch(`${url}/destinations`, {cache:"no-store"})
-    if(!res.ok){
-        throw new Error('faild to fetch data')
-    }
-    return await res.json()
+  const res = await axios.get(`${url}/destinations`).then((response) => response.data)
+  return res
 }
-const destinationData = getDestinations()
+// const destinationData = getDestinations()
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 export default function TheHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const path = usePathname()
- const data = use(destinationData)
+//  const data = use(destinationData)
+ const { data, isLoading, isFetching, error, isSuccess } = useQuery({
+  queryKey: ["destinations"],
+  queryFn: () => getDestinations(),
+});
+useEffect(() => {
+  if(isSuccess && data) {
+    console.log(data)
+  }
+}, [isSuccess, data])
   return (
     <Fragment>
     <header className="bg-white top-0 z-50 shadow-lg">
@@ -64,7 +72,7 @@ export default function TheHeader() {
             >
               <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-xs overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
                 <div className="p-4">
-                    {data?.length > 0&&
+                    {data && data?.length > 0&&
                       data.map((destination) => (
                     <div
                       key={destination.id}
