@@ -4,9 +4,11 @@ import "react-multi-carousel/lib/styles.css";
 import Image from 'next/image';
 import Section from "./Section";
 import { Card, CardHeader, CardBody, Typography } from './MaterialTailwind'
-import { use } from 'react'
+import { use, useEffect } from 'react'
 // import useSWR from 'swr'
 import url from '../app/url'
+import axios from "axios";
+import { useQueries, useQuery } from "@tanstack/react-query";
 
 
 const responsive = {
@@ -28,14 +30,22 @@ const responsive = {
 };
   
 async function fechTeams(){
-  const res = await fetch(`${url}/get_teams`)
- return res.json();
+  const res = await axios(`${url}/get_teams`).then(response => response.data)
+  return res
 }
-const activeTeams = fechTeams()
+
 
 export default function OurTeams(){
-  const teams = use(activeTeams)
- 
+  const {data, isSuccess} = useQuery({
+    queryKey: "teams",
+    queryFn: () => fechTeams()
+  })
+  
+  useEffect(() => {
+    if(isSuccess && data) {
+      console.log(data)
+    }
+  }, [isSuccess, data])
     return (
         <Carousel
   swipeable={true}
@@ -55,8 +65,8 @@ export default function OurTeams(){
   itemClass="carousel-item-padding-40-px"
 >
 {
-  teams?.length > 0 &&
-  teams.map(team => (
+  data && data?.length > 0 &&
+  data.map(team => (
             <Section key={team}>
            <div className="w-11/12 mx-auto block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
            <Card className="max-w-full overflow-hidden mb-10 min-h-[25rem] max-h-[25rem]">

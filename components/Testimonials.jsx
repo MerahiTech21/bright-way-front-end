@@ -6,6 +6,8 @@ import Section from "./Section";
 import { use } from 'react'
 import useSWR from 'swr'
 import url from '../app/url'
+import axios from "axios";
+import { useQuery } from "@tanstack/react-query";
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
@@ -23,16 +25,19 @@ const responsive = {
     slidesToSlide: 1 // optional, default to 1.
   }
 };
+
 const getDestinations = async () => {
-  const res = await fetch(`${url}/testimonials`, {cache:"no-store"})
-    if(!res.ok){
-        throw new Error('faild to fetch data')
-    }
-    return await res.json()
+  const res = await axios(`${url}/testimonials`).then(response => response.data)
+  return res
 }
-const destinationDatas = getDestinations()
+
 const SingleImageCarousel = () => {
-  const data = use(destinationDatas)
+
+  const { data, isSuccess} = useQuery({
+    queryKey: "testimonials",
+    queryFn: () => getDestinations()
+  })
+
     return (
         <Carousel
   swipeable={true}
@@ -51,7 +56,7 @@ const SingleImageCarousel = () => {
   dotListClass="custom-dot-list-style"
   itemClass="carousel-item-padding-40-px"
 >
-{ data?.length > 0 &&
+{ data && data?.length > 0 &&
   data.map((testimonial) => (
                   <Section key={testimonial.id}>
                     <div  className="w-11/12 mx-auto rounded-md bg-white p-6 text-center  md:text-left">
