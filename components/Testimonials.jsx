@@ -27,14 +27,14 @@ const responsive = {
 };
 
 const getDestinations = async () => {
-  const res = await axios(`${url}/testimonials`).then(response => response.data)
+  const res = await axios.get(`${url}/testimonials`).then(response => response.data)
   return res
 }
 
 const SingleImageCarousel = () => {
 
   const { data, isSuccess} = useQuery({
-    queryKey: "testimonials",
+    queryKey: ["testimonials"],
     queryFn: () => getDestinations()
   })
 
@@ -47,7 +47,7 @@ const SingleImageCarousel = () => {
   ssr={true} // means to render carousel on server-side.
   infinite={true}
   autoPlay={true}
-  autoPlaySpeed={2000}
+  autoPlaySpeed={4000}
   keyBoardControl={true}
   customTransition="all 300ms"
   transitionDuration={2000}
@@ -56,13 +56,13 @@ const SingleImageCarousel = () => {
   dotListClass="custom-dot-list-style"
   itemClass="carousel-item-padding-40-px"
 >
-{ data && data?.length > 0 &&
+{ data ?
   data.map((testimonial) => (
                   <Section key={testimonial.id}>
-                    <div  className="w-11/12 mx-auto rounded-md bg-white p-6 text-center  md:text-left">
+                    <div  className="w-11/12 mx-auto rounded-md bg-white p-6 text-center  md:text-left md:min-h-[15rem] md:max-h-[15rem]">
                           <div className="md:flex md:flex-row">
                             <div className="mx-auto mb-6 flex  items-center justify-center md:mx-0 md:w-96 lg:mb-0">
-                          <Image src={testimonial.photo} width={250} height={250}  alt="carousel_image" className="rounded-lg shadow-md dark:shadow-black/30" />
+                          <Image src={testimonial.photo} width={250} height={250}  alt="testimonials_image" className="rounded-lg shadow-md dark:shadow-black/30 "  />
                             </div>
                             <div className="md:ml-6">
                               <p
@@ -79,7 +79,8 @@ const SingleImageCarousel = () => {
                       </div>
                   </Section>
     
-  ))
+  )
+  ):<div className="text-center text-lg text-red-500">No testimonials found</div>
 }
 </Carousel>
     )

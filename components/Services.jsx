@@ -16,11 +16,11 @@ const Services = async () => {
   }, [isSuccess, data])
     return (
       <div className='bg-primary p-0 lg:px-0'>
-        <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 lg:gap-10  lg:py-0 w-11/12 mx-auto'>
+        <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 lg:gap-10  lg:py-10 w-11/12 mx-auto'>
           {
             data && data.map((service) => (
             <section key={service.id} className='py-5 flex flex-col justify-start items-center text-center'>
-              <Image src={service.icon} alt="honest icon"  width= {70} height={70} className='transition ease-in-out delay-150  hover:scale-150  duration-1000' />
+              <Image src={service.icon} alt="service icon"  width= {100} height={100} className='rounded-md' />
               <div className='lg:mt-5 text-lg text-white text-center'>{service.title}</div>
             </section>
             ))

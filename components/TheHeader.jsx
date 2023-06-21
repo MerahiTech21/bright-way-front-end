@@ -7,8 +7,8 @@ import { HiChevronDown } from '@react-icons/all-files/hi/HiChevronDown'
 import { FcMenu } from '@react-icons/all-files/fc/FcMenu'
 import { FaTimes } from '@react-icons/all-files/fa/FaTimes'
 import { usePathname } from 'next/navigation'
+import Spinner from './Spinner'
 import axios from 'axios'
-// import useSWR from 'swr'
 import url from '../app/url'
 import { useQuery } from '@tanstack/react-query'
 const getDestinations = async () => {
@@ -52,7 +52,7 @@ useEffect(() => {
             <FcMenu className="h-6 w-6" aria-hidden="true" />
           </button>
         </div>
-        <Popover.Group className="hidden lg:flex lg:gap-x-12">
+        <Popover.Group className="hidden lg:flex lg:gap-x-6">
         <Link href="/" className={path==='/' ?"border-b-4 border-indigo-500 text-sm font-semibold leading-6 text-gray-900":"text-sm font-semibold leading-6 text-gray-900 hover:border-b-4 border-indigo-500"}>Home</Link>
           <Link href="/about" className={path==='/about' ?"border-b-4 border-indigo-500 text-sm font-semibold leading-6 text-gray-900":"text-sm font-semibold leading-6 text-gray-900 hover:border-b-4 border-indigo-500"}>About</Link>
           <Popover className="relative">
@@ -72,7 +72,7 @@ useEffect(() => {
             >
               <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-xs overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
                 <div className="p-4">
-                    {data && data?.length > 0&&
+                    {data ?
                       data.map((destination) => (
                     <div
                       key={destination.id}
@@ -85,7 +85,8 @@ useEffect(() => {
                     </Popover.Button>                      
                       </div>
                     </div>
-                  ))}
+                      )):<Spinner />
+                }
                 </div>      
               </Popover.Panel>
             </Transition>
@@ -132,7 +133,7 @@ useEffect(() => {
                         />
                       </Disclosure.Button>
                       <Disclosure.Panel className="mt-2 space-y-2">
-                        {data?.length > 0&&
+                        {data?
                           data.map((destination) => (
                           <Disclosure.Button
                             key={destination.id}
@@ -142,7 +143,9 @@ useEffect(() => {
                           >
                             <span className='hover:text-amber-500'>{destination.title}</span>
                           </Disclosure.Button>
-                        ))}
+                          ))
+                          :<Spinner />
+                      }
                       </Disclosure.Panel>
                     </>
                   )}
@@ -150,7 +153,7 @@ useEffect(() => {
                
                 <Link href="/Services" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Services</Link>
                 <Link href="/blog" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Blog</Link>
-                <Link href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Contact</Link>
+                <a href="#contactarea" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Contact</a>
                   <Link href="/applay" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Applay</Link>
                   <Link href="/bookconsulting" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Book free Consulting</Link>
               </div>

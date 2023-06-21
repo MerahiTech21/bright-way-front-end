@@ -1,6 +1,7 @@
 'use client'
 import React, { useEffect } from 'react'
 import Image from 'next/image'
+import Spinner from './Spinner'
 import url from '../app/url'
 import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
@@ -24,8 +25,8 @@ async function Packages() {
         <div className='min:w-screen bg-[url(/whobg.jpg)] flex flex-col justify-center items-center'>
             <div className='text-center text-3xl text-white font-mono font-bold py-10'>Study Abroad Packages</div>
             <div className='grid grid-cols-2 gap-4 py-4 px-4 md:grid-cols-4 md:gap-10 md:px-28 md:py-10'>
-                {
-                    data && data?.map((destination) => (
+                {isLoading? <Spinner />:
+                     data?  data?.map((destination) => (
                         <div key={destination.id} className='flex flex-col justify-start items-center shadow-2xl rounded-md'>
                             <Image
                             className="rounded-t-lg my-3"
@@ -43,7 +44,8 @@ async function Packages() {
                             </p>
                             <button className='text-primary-green text-lg font-medium p-2'>See More</button>
                         </div>
-                    ))
+                     ))
+                    :<div className='text-center text-lg text-red-500'>No countries found</div>
                 }
             </div>
         </div>
