@@ -16,11 +16,11 @@ import Packages from '../../components/Packages'
       <div className='md:grid md:grid-cols-2 md:gap-4 pb-5 w-11/12 lg:min-h-full lg:pb-20 lg:mx-auto text-slate-900'>
         <div>
         <Section>
-        <div className='text-center pt-10 text-3xl text-slate-900'>About Bright way Education consultancy</div>
+        <div className='text-center pt-10 text-2xl md:text-3xl text-slate-900 px-5 font-mono font-bold'>About Bright way Education consultancy</div>
         </Section>
         
         <Section>
-          <div className='md:pe-20 pt-5'>            
+          <div className='px-5 md:pe-20 pt-5 font-mono'>            
               <p>
               BrightPath Consultancy is a leading education consulting firm that helps students from around the world achieve their academic goals. Since our founding in May 2018, we have been providing expert guidance and support to students remotely. Our services are designed to make the complex and challenging process of studying abroad as smooth and stress-free as possible. Whether you're interested in studying in the United States, Canada, Europe, or elsewhere, our experienced consultants have the expertise and experience to help you find the right program, navigate the admissions process, and secure funding
               </p>
@@ -39,7 +39,7 @@ import Packages from '../../components/Packages'
         
       
       <Section>
-      <div className='text-center text-4xl font-mono py-10'>
+      <div className='text-center text-2xl md:text-3xl font-mono font-bold py-10'>
         Why Choose Us
         
         </div>
@@ -48,7 +48,7 @@ import Packages from '../../components/Packages'
       <div className='bg-primary'>
       <div className='w-11/12 mx-auto py-10 '>
       <Section>
-        <div className='text-center text-4xl font-mono py-10 text-white'> Our Teams</div>
+        <div className='text-center text-2xl md:text-3xl font-mono font-bold py-10 text-white'> Our Teams</div>
         </Section>
     <OurTeams />
     </div>
@@ -56,7 +56,7 @@ import Packages from '../../components/Packages'
       <div className='pb-10 bg-dark-gray'>
         <div className='w-11/12 mx-auto'>
         <Section>
-        <div className='text-center text-4xl font-mono py-10'> Testimonials</div>
+        <div className='text-center text-2xl md:text-3xl font-mono font-bold py-10'> Testimonials</div>
           </Section>
           <Testimonials />
         </div>

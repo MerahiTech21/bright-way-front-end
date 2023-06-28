@@ -69,29 +69,25 @@ export default function OurTeams(){
   data ?
   data.map(team => (
             <Section key={team.id}>
-           <div className="w-11/12 mx-auto block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
-           <div className="max-w-full overflow-hidden mb-10 min-h-[25rem] max-h-[25rem]">
-        <div
-          floated={false}
-          shadow={false}
-          color="transparent"
-          className="m-0 rounded-lg relative h-64 "
+           <div className="w-11/12 mx-auto block rounded-lg bg-white">
+           <div className="max-w-full overflow-hidden mb-10 min-h-[20rem] max-h-[20rem]">
+        <div className="m-0 rounded-lg relative h-48"
         >
         <Image src={team.photo} fill alt="profile-picture" className="border-none rounded-t-lg" />
         </div>
-        <CardBody>
-          <Typography variant="h6" color="blue-gray">
+        <div>
+          <h6 className="font-bold pl-5 mt-2">
             {team.f_name+" "+team.m_name}
-          </Typography>
-          <Typography color="gray" className="mt-3 font-normal">
+          </h6>
+          <p  className="mt-3 font-normal pl-5">
             {team.quote}
-          </Typography>
-        </CardBody>
+          </p>
+        </div>
       </div>
                 </div>
           </Section>
    
-  )):<div className="text-center text-lg text-red-500" >No Teams fount</div>
+  )):<div className="text-center text-lg text-red-500" >No Teams found</div>
 }
 
 </Carousel>

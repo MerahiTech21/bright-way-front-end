@@ -12,7 +12,7 @@ export default async function Blogs() {
   const blogs = await fethBlogs()
  
   return (
-    <div className="bg-light py-24 sm:py-32">
+    <div className="bg-light py-12 sm:py-32">
       <div className="px-6 lg:px-8">
           <BlogCard blogs={blogs} />
        

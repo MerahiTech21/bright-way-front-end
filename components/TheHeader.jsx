@@ -35,11 +35,11 @@ useEffect(() => {
   return (
     <Fragment>
     <header className="bg-white top-0 z-50 shadow-lg">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between" aria-label="Global">
         <div className="flex lg:flex-1">
           <Link href="/" className="flex items-center -m-1.5 p-1.5">
-            <Image className="h-8 w-auto" src="/logo.png" width={80} height={80} priority={true} alt="" />
-            <span className="ml-2 text-primary font-bold">Your Company</span>
+            <Image src="/KURAZ2.png" width={100} height={100} priority={true} alt="" />
+            <span className="ml-2 text-primary font-bold">KURAZ CONSULTANCY</span>
           </Link>
         </div>
         <div className="flex lg:hidden">
@@ -94,7 +94,7 @@ useEffect(() => {
 
           <Link href="/services" className={path==='/services' ?"border-b-4 border-indigo-500 text-sm font-semibold leading-6 text-gray-900":"text-sm font-semibold leading-6 text-gray-900 hover:border-b-4 border-indigo-500"}>Services</Link>
           <Link href="/blog" className={path==='/blog' ?"border-b-4 border-indigo-500 text-sm font-semibold leading-6 text-gray-900":"text-sm font-semibold leading-6 text-gray-900 hover:border-b-4 border-indigo-500"}>Blog</Link>
-          <a href="#contactarea" className={path==='/contact' ?"border-b-4 border-indigo-500 text-sm font-semibold leading-6 text-gray-900":"text-sm font-semibold leading-6 text-gray-900 hover:border-b-4 border-indigo-500"}>Contact</a>
+          <a href="/contactus" className={path==='/contact' ?"border-b-4 border-indigo-500 text-sm font-semibold leading-6 text-gray-900":"text-sm font-semibold leading-6 text-gray-900 hover:border-b-4 border-indigo-500"}>Contact</a>
             <Link href="/applay" className={path === '/applay' ? "border-b-4 border-indigo-500 text-sm font-semibold leading-6 text-gray-900" : "text-sm font-semibold leading-6 text-gray-900 hover:border-b-4 border-indigo-500"}>Applay</Link>
             <Link href="/bookconsulting" className={path === '/bookconsulting' ? "border-b-4 border-indigo-500 text-sm font-semibold leading-6 text-gray-900" : "text-sm font-semibold leading-6 text-gray-900 hover:border-b-4 border-indigo-500"}>Book free Consulting</Link>
           
@@ -104,7 +104,7 @@ useEffect(() => {
         <div className="fixed inset-0 z-10" />
         <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
-            <Link href="#" className="-m-1.5 p-1.5">
+            <Link href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
               <Image className="h-8 w-auto" src="/logo.png" width={80} height={80} priority={true} alt="" />
             </Link>
@@ -120,8 +120,8 @@ useEffect(() => {
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
-                <Link href="/" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Home</Link>
-                <Link href="/about" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">About</Link>
+                <Link href="/" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50" onClick={() => setMobileMenuOpen(false)}>Home</Link>
+                <Link href="/about" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50" onClick={() => setMobileMenuOpen(false)}>About</Link>
                 <Disclosure as="div" className="-mx-3">
                   {({ open }) => (
                     <>
@@ -136,12 +136,9 @@ useEffect(() => {
                         {data?
                           data.map((destination) => (
                           <Disclosure.Button
-                            key={destination.id}
-                            as="Link"
-                            href={`/destination/${destination.id}`}
-                            className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                          >
-                            <span className='hover:text-amber-500'>{destination.title}</span>
+                            key={destination.id}   
+                           className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50">
+                            <Link   href={`/destination/${destination.id}`} className='hover:text-amber-500' onClick={() => setMobileMenuOpen(false)}>{destination.title}</Link>
                           </Disclosure.Button>
                           ))
                           :<Spinner />
@@ -151,11 +148,11 @@ useEffect(() => {
                   )}
                 </Disclosure>
                
-                <Link href="/Services" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Services</Link>
-                <Link href="/blog" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Blog</Link>
-                <a href="#contactarea" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Contact</a>
-                  <Link href="/applay" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Applay</Link>
-                  <Link href="/bookconsulting" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Book free Consulting</Link>
+                <Link href="/services" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50" onClick={() => setMobileMenuOpen(false)}>Services</Link>
+                <Link href="/blog" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50" onClick={() => setMobileMenuOpen(false)}>Blog</Link>
+                <a href="#contactarea" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50" onClick={() => setMobileMenuOpen(false)}>Contact</a>
+                  <Link href="/applay" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50" onClick={() => setMobileMenuOpen(false)}>Applay</Link>
+                  <Link href="/bookconsulting" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50" onClick={() => setMobileMenuOpen(false)}>Book free Consulting</Link>
               </div>
             </div>
           </div>

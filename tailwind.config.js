@@ -17,6 +17,7 @@ module.exports = withMT({
       colors: {
         'primary-orange': '#FF5722',
         'primary': '#2C3F63',
+        'secondary': '#FCB102',
         'light': '#F2F7FE',
         'gray': '#CFE4F9',
         'dark-gray': '#CFE4F9',
