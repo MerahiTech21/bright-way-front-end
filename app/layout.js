@@ -25,7 +25,6 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className} suppressHydrationWarning={true} >
         <Providers>
-          <TopBar />
           <TheHeader />
           <Suspense fallback={<Loading />}>{children}</Suspense>
           {

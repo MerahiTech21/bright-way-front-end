@@ -54,8 +54,9 @@ import Link from 'next/link'
                   <div className='text-white text-2xl'>Address Two</div>
                   <div className='text-white text-xl'>2. 7523 24th Ave SW Seattle, Washington</div>
                   <div className='text-white text-xl'>206-353-5373</div>
+
                   <div className='mt-10 lg:mt-14'>
-                      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d252226.0134836966!2d38.4836695395734!3d8.969248113153492!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b84f21691961f%3A0x822a438ed5adcc15!2sAddis%20Ababa%2C%20Ethiopia!5e0!3m2!1sen!2snl!4v1684613347486!5m2!1sen!2snl" className='w-full h-96' style={{ border: 0 }} allowFullScreen={true} loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2693.6958103715006!2d-122.36837650829688!3d47.53478491864081!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5490417277c8cbf3%3A0x4ff6934b6aa5dfaa!2s7523%2024th%20Ave%20SW%2C%20Seattle%2C%20WA%2098106%2C%20USA!5e0!3m2!1sen!2sca!4v1687348006478!5m2!1sen!2sca" className='w-full h-96' style={{ border: 0 }} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                   </div>
                   
               </Section>
