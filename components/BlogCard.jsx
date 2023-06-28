@@ -8,10 +8,10 @@ import Section from './Section';
 const BlogsCard = async ({blogs}) => {
   return (
     <div className="bg-light py-0 sm:py-5">
-      <div className="px-6 lg:px-8">
+      <div className="lg:px-8">
         <div className="mx-auto w-full lg:mx-0">
         <Section>
-          <h2 className="text-center text-3xl font-bold sm:text-4xl font-mono">Whats'up In Bright Way Path!</h2>          
+          <h2 className="text-center text-2xl font-bold md:text-4xl">Whats'up In Bright Way Path!</h2>          
           </Section>
         </div>
         
@@ -22,8 +22,8 @@ const BlogsCard = async ({blogs}) => {
                 <Section key={blog.id}>
               <div className="w-full rounded-2xl p-5 md:flex lg:gap-10 border-solid border-2 border-primary shadow-2xl">
               <Image src={blog.photos[0]?.path} alt='blog image' width={300} height={50}/>
-              <div className="flex flex-col items-start">
-                <p className="font-bold text-2xl lg:text-3xl text-primary my-5">{blog.title}</p>
+              <div className="flex flex-col items-start md:pl-5">
+                <p className="font-bold text-xl md:text-2xl lg:text-3xl text-primary">{blog.title}</p>
                 <p className="font-normal text-lg">{blog.short_desc}</p>
                 <Link href={`/blog/${blog.id}`}><button className="mt-5 bg-primary rounded-md p-2 text-white font-bold text-center">READ MORE</button></Link>
               </div>

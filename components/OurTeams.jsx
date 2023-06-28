@@ -43,38 +43,42 @@ export default function OurTeams(){
       console.log("teams=",data)
     }
   }, [isSuccess, data])
-  
-  return (
-    <Carousel
-      swipeable={true}
-      draggable={false}
-      showDots={false}
-      responsive={responsive}
-      ssr={true} // means to render carousel on server-side.
-      infinite={true}
-      autoPlay={true}
-      autoPlaySpeed={2000}
-      keyboardControl={true}
-      customTransition="all 300ms"
-      transitionDuration={300}
-      containerClass="carousel-container"
-      removeArrowOnDeviceType={["desktop","tablet", "mobile"]}
-      dotListClass="custom-dot-list-style"
-      itemClass="carousel-item-padding-40-px"
-    >
-      {isLoading ? <Spinner /> :
-        data ?
-        data.map(team => (
-          <Section key={team.id}>
-            <div className="w-11/12 mx-auto block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
-              <div className="max-w-full overflow-hidden mb-10 min-h-[25rem] max-h-[25rem]">
-                <div
-                  floated={false}
-                  shadow={false}
-                  color="transparent"
-                  className="m-0 rounded-lg relative h-64 "
-                >
-                  <Image src={team.photo} fill alt="profile-picture" className="border-none rounded-t-lg" />
+    return (
+        <Carousel
+  swipeable={true}
+  draggable={false}
+  showDots={false}
+  responsive={responsive}
+  ssr={true} // means to render carousel on server-side.
+  infinite={true}
+  autoPlay={true}
+  autoPlaySpeed={2000}
+  keyBoardControl={true}
+  customTransition="all 300ms"
+  transitionDuration={300}
+  containerClass="carousel-container"
+  removeArrowOnDeviceType={["desktop","tablet", "mobile"]}
+  dotListClass="custom-dot-list-style"
+  itemClass="carousel-item-padding-40-px"
+>
+{isLoading?<Spinner />:
+  data ?
+  data.map(team => (
+            <Section key={team.id}>
+           <div className="w-11/12 mx-auto block rounded-lg bg-white">
+           <div className="max-w-full overflow-hidden mb-10 min-h-[20rem] max-h-[20rem]">
+        <div className="m-0 rounded-lg relative h-48"
+        >
+        <Image src={team.photo} fill alt="profile-picture" className="border-none rounded-t-lg" />
+        </div>
+        <div>
+          <h6 className="font-bold pl-5 mt-2">
+            {team.f_name+" "+team.m_name}
+          </h6>
+          <p  className="mt-3 font-normal pl-5">
+            {team.quote}
+          </p>
+        </div>
                 </div>
                 <CardBody>
                   <Typography variant="h6" color="blue-gray">
@@ -85,11 +89,13 @@ export default function OurTeams(){
                   </Typography>
                 </CardBody>
               </div>
-            </div>
           </Section>
-        )) :
-        <div className="text-center text-lg text-red-500" >No Teams found</div>
-      }
-    </Carousel>
-  )
+   
+  )):<div className="text-center text-lg text-red-500" >No Teams found</div>
 }
+
+</Carousel>
+    )
+}
+
+ 

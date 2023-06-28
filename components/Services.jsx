@@ -21,7 +21,7 @@ const Services = async () => {
             data && data.map((service) => (
             <section key={service.id} className='py-5 flex flex-col justify-start items-center text-center'>
               <Image src={service.icon} alt="service icon"  width= {100} height={100} className='rounded-md' />
-              <div className='lg:mt-5 text-lg text-white text-center'>{service.title}</div>
+              <div className='lg:mt-5  text-white text-center font-mono'>{service.title}</div>
             </section>
             ))
           }    

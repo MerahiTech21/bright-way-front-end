@@ -29,8 +29,8 @@ export default async function Services() {
           services && services.map((service) => (
             <Section key={service.id} >
               <article className="flex max-w-xl flex-col items-start justify-between overflow-hidden bg-white border rounded-lg shadow-xl cursor-pointer py-5 lg:py-10">
-              <Link href={`/services/${service.id}`} class="block text-center w-full">
-              <Image alt="service icon" src={service.icon} width={250} height={100} class="mx-auto object-cover  "/>
+              <Link href={`/services/${service.id}`} className="block text-center w-full">
+              <Image alt="service icon" src={service.icon} width={250} height={100} className="mx-auto object-cover  "/>
             </Link>          
               
               <div className="group relative px-5">

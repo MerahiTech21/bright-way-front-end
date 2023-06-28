@@ -11,7 +11,7 @@ import convenence from '../public/convenience.png'
 import Section from './Section'
 const WhyChooseUs = () => {
   return (
-    <div className='grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-20 py-5  lg:py-20 w-11/12 mx-auto'>
+    <div className='grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-20 py-5  lg:py-20 w-11/12 mx-auto font-mono'>
         
     <div className='flex justify-center'>
       <Section>
