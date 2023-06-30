@@ -50,7 +50,7 @@ const SingleImageCarousel = () => {
   autoPlaySpeed={4000}
   keyBoardControl={true}
   customTransition="all 300ms"
-  transitionDuration={2000}
+  transitionDuration={3000}
   removeArrowOnDeviceType={["desktop", "tablet", "mobile"]}
   containerClass="carousel-container"
   dotListClass="custom-dot-list-style"

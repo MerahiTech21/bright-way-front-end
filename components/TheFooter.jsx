@@ -15,7 +15,8 @@ import logo from "../public/logo.jpg"
 import Section from './Section'
  const TheFooter = () => {
   return (   
-    <footer className="max-w-full bg-primary pt-10 bg-contain bg-[url('/bgall.jpg')] backdrop-brightness-0" >
+    <footer className="max-w-full bg-primary bg-contain bg-[url('/bgall.jpg')] backdrop-brightness-0">
+        <div className='min:w-screen h-full bg-[#4BAA96] bg-opacity-75 py-10'>
           <Section>
               <div className='text-center text-white text-2xl md:text-3xl font-mono font-bold'>Follow Us On</div>
               <div className='lg:flex flex-row justify-center gap-3 lg:mt-10' id="contactarea">
@@ -63,8 +64,9 @@ import Section from './Section'
                   </div>
                   </div>
           </div>
-          <div className='w-full bg-white text-center mt-14 pt-6 pb-6 font-mono'>Copyright © 2023 | Developed by Merahi Technologies</div>
-</footer>
+          {/* <div className='w-full bg-white text-center mt-14 pt-6 pb-6 font-mono'>Copyright © 2023 | Developed by Merahi Technologies</div> */}
+        </div>
+    </footer>
 
   )
 }

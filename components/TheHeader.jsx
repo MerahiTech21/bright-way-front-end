@@ -41,7 +41,7 @@ useEffect(() => {
               <img className="w-20 h-auto" src="/asset/logoo.png" alt="" />
             </Link>
           </div>
-          <div className="flex lg:hidden">
+          <div className="flex py-4 lg:hidden">
             <button
               type="button"
               className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
@@ -94,18 +94,15 @@ useEffect(() => {
             <Link href="/blog" className={path==='/blog' ?"mx-1 text-xl text-[#F48E20] font-semibold leading-6 text-[#F48E20]":"mx-1 text-xl text-[#F48E20] font-semibold leading-6 text-[#F48E20]"}>Blog</Link>
             <a href="#contactarea" className={path==='/contact' ?"mx-1 text-xl text-[#F48E20] font-semibold leading-6 text-[#F48E20]":"mx-1 text-xl text-[#F48E20] font-semibold leading-6 text-[#F48E20]"}>Contact</a>
               <Link href="/applay" className={path === '/applay' ? "mx-1 text-xl text-[#F48E20] font-semibold leading-6 text-[#F48E20]" : "mx-1 text-xl text-[#F48E20] font-semibold leading-6 text-[#F48E20]"}>Applay</Link>
-              {/* <Link href="/bookconsulting" className={path === '/bookconsulting' ? "border-indigo-500 text-lg font-semibold leading-6 text-[#F48E20]" : "text-lg font-semibold leading-6 text-gray-900 border-indigo-500"}>Book free Consulting</Link> */}
-            
           </Popover.Group>
-          <button className='py-2 rounded-md flex-[.2] text-xl text-[#FFFFFF] bg-[#F48E20]'>Book Free Consulting</button>
+          <Link href="/bookconsulting" className='hidden lg:block'><button className='py-2 px-4 rounded-md flex-[.2] text-xl text-[#FFFFFF] bg-[#F48E20]'>Book Free Consulting</button></Link>
         </nav>
         <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
           <div className="fixed inset-0 z-10" />
           <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div className="flex items-center justify-between">
               <Link href="#" className="-m-1.5 p-1.5">
-                <span className="sr-only">Your Company</span>
-                <Image className="h-8 w-auto" src="/logo.png" width={80} height={80} priority={true} alt="" />
+                <Image className="h-8 w-auto" src="/asset/logoo.png" width={80} height={80} priority={true} alt="" />
               </Link>
               <button
                 type="button"

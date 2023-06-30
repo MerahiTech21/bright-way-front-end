@@ -4,7 +4,7 @@ import './globals.css'
 import { Inter } from 'next/font/google'
 import TopBar from '../components/TopBar'
 import TheHeader from '../components/TheHeader';
-import TheFooter from '../components/TheFooter'
+import Footer from '../components/Footer'
 import Loading from './loading'
 import Providers from '../utils/provider'
 const inter = Inter({
@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
         <Providers>
           <TheHeader />
           <Suspense fallback={<Loading />}>{children}</Suspense>
-            <TheFooter />  
+            <Footer />  
           
           
             <script src="https://cdn.botpress.cloud/webchat/v0/inject.js"></script>
