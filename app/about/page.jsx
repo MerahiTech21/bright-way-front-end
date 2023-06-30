@@ -6,7 +6,9 @@ import OurTeams from '../../components/OurTeams'
 import Testimonials from "../../components/Testimonials"
 import WhyChooseUs from '../../components/WhyChooseUs'
 import SingleCarousel from '../../components/SingleCarousel'
-import Packages from '../../components/Packages'
+import image1 from '../../public/scholar.jpeg'
+import image2 from '../../public/collaboration.jpeg'
+import Image from 'next/image'
  const AboutPage = () => {
   return (
     
@@ -34,10 +36,49 @@ import Packages from '../../components/Packages'
          
           </div>
         </div>
+        <div className='text-center text-2xl md:text-3xl font-mono font-bold py-10'>Experience</div>
+      <div className='grid col-span-1 md:grid-cols-2 justify-center items-center'>
+      <div className='px-10 md:px-20 align-top'>
+        <Section>    
+          <div>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          Lorem Ipsum has been the industry's standard dummy text ever since the
+          1500s, when an unknown printer took a galley of type and scrambled it to
+          make a type specimen book. It has survived not only five centuries, but
+          also the leap into electronic typesetting, remaining essentially
+          unchanged. It was popularised in the 1960s with the release of Letraset
+          sheets containing Lorem Ipsum passages, and more recently with desktop
+          publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
        
-       <Packages />
-        
-      
+        </Section>
+        </div>
+        <Section>
+          <div className='mt-10'>
+          <Image  src={image1} alt='experience image' style={{minWidth:'80%'}} className='shadow-lg'  />
+          </div>
+          </Section>
+      </div>
+
+      <div className='grid col-span-1 md:grid-cols-2 justify-center items-center px-10 md:px-20 mt-10 md:mt-14'>
+      <Section>
+          <div className='relative'>
+          <Image  src={image2} style={{minWidth:'80%'}} className='shadow-lg'  alt='experience image' />
+          </div>
+      </Section>
+      <div className=''>
+        <Section>       
+        <div className='text-center text-2xl md:text-3xl font-mono font-bold py-10'>Collaboration</div>
+      <div>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      Lorem Ipsum has been the industry's standard dummy text ever since the
+      1500s, when an unknown printer took a galley of type and scrambled it to
+      make a type specimen book. It has survived not only five centuries, but
+      also the leap into electronic typesetting, remaining essentially
+      unchanged. It was popularised in the 1960s with the release of Letraset
+      sheets containing Lorem Ipsum passages, and more recently with desktop
+      publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+           
+        </Section>
+        </div>
+    </div>
       <Section>
       <div className='text-center text-2xl md:text-3xl font-mono font-bold py-10'>
         Why Choose Us

@@ -11,14 +11,14 @@ import { FiPhoneIncoming } from '@react-icons/all-files/fi/FiPhoneIncoming'
 
 import Link from 'next/link'
 import Image from 'next/image'
-import logo from "../public/logo.jpg"
+import logo from "../public/logo.png"
 import Section from './Section'
  const TheFooter = () => {
   return (   
     <footer className="max-w-full bg-primary pt-10 bg-contain bg-[url('/bgall.jpg')] backdrop-brightness-0" >
           <Section>
               <div className='text-center text-white text-2xl md:text-3xl font-mono font-bold'>Follow Us On</div>
-              <div className='lg:flex flex-row justify-center gap-3 lg:mt-10' id="contactarea">
+              <div className='flex flex-row justify-center gap-3 lg:mt-10' id="contactarea">
               <a href="/" className='rounded-full p-2 lg:p-3 bg-blue-800 transition ease-in-out delay-150  hover:rotate-12  duration-1000 '> <FaFacebookSquare size={20}  className='text-white' /></a>                  
               <a href="/" className='rounded-full p-2 lg:p-3 bg-blue-400 transition ease-in-out delay-150  hover:rotate-12  duration-1000'> <ImTelegram size={20} className='text-white' /></a>                  
               <a href="/" className='rounded-full p-2 lg:p-3 bg-black transition ease-in-out delay-150  hover:rotate-12  duration-1000'> <FaInstagramSquare size={20} className='text-white' /></a>                    
@@ -31,17 +31,21 @@ import Section from './Section'
           </Section>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 w-full mx-auto px-5 lg:px-20 mt-10 lg:mt-14 ">
               <div>
-               <Image src={logo} alt='logo'/>
+                  <Image src={logo} alt='logo' style={{ width: "200px",height:'200px' }}/>
               </div>
+              <div className='flex justify-center'>
               <div className='text-white'>
-                  <div className='mb-3 text-2xl'>Services</div>
-                  <div>
-                      <Link href={`services/${1}`} className='text-sm hover:underline hover:text-secondary'>Family-Based Immigration Visas</Link></div>
-                  <div><Link href={`services/${1}`} className='text-sm hover:underline hover:text-secondary'>Employment-Based Immigration Visas</Link></div>
-                  <div><Link href={`services/${1}`} className='text-sm hover:underline hover:text-secondary'>Diversity Visa Program</Link></div>
-                  <div><Link href={`services/${1}`} className='text-sm hover:underline hover:text-secondary'>Family-Based Immigration Visas</Link></div>
-                  <div><Link href={`services/${1}`} className='text-sm hover:underline hover:text-secondary'>Family-Based Immigration Visas</Link></div>
+              <div className='mb-3 text-2xl'>Services</div>
+              <div>
+                  <Link href={`services/${1}`} className='text-sm hover:underline hover:text-secondary'>Family-Based Immigration Visas</Link></div>
+              <div><Link href={`services/${1}`} className='text-sm hover:underline hover:text-secondary'>Employment-Based Immigration Visas</Link></div>
+              <div><Link href={`services/${1}`} className='text-sm hover:underline hover:text-secondary'>Diversity Visa Program</Link></div>
+              <div><Link href={`services/${1}`} className='text-sm hover:underline hover:text-secondary'>Family-Based Immigration Visas</Link></div>
+              <div><Link href={`services/${1}`} className='text-sm hover:underline hover:text-secondary'>Family-Based Immigration Visas</Link>
               </div>
+          </div>
+              </div>
+              <div className='flex justify-center'>
               <div className='text-white'>
                   <div className='mb-3 text-2xl'>Contacts</div>
                   <div>Address One</div>
@@ -62,6 +66,7 @@ import Section from './Section'
                       <span className='ml-2 text-sm'>206-353-5373</span>
                   </div>
                   </div>
+              </div>
           </div>
           <div className='w-full bg-white text-center mt-14 pt-6 pb-6 font-mono'>Copyright © 2023 | Developed by Merahi Technologies</div>
 </footer>

@@ -3,18 +3,17 @@ import React,{useState} from "react";
 import {Card,CardHeader,CardBody,Input,Button,Typography,Spinner } from "@material-tailwind/react";
 import { BanknotesIcon } from "@heroicons/react/24/solid";
 import url from "../url";
+import axios from 'axios'
  
 export default function Example() {
   const [code, setCode] = useState("");
   const [isLoading,setIsLoading] = useState(false)
-  // const coderef = useRef()
   const sebmitCode = async (e) => { 
     e.preventDefault()  
     try {
       setIsLoading(true)
-      const res = await fetch(`${url}/get_status/${code}`)
-      const status = await res.json()
-      console.log('response', status)
+      const response = await axios.get(`${url}/get_status/${code}`)
+      console.log('response', response.data)
       
     }
     catch (err) { }
