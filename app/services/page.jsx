@@ -6,7 +6,7 @@ import Link from "next/link"
 import Section from "../../components/Section";
 import url from "../url";
 async function getData() {
-  const res = await axios(`${url}/services`).then(response => response.data());  
+  const res = await axios.get(`${url}/services`)
   return res
 }
 export default async function Services() {

@@ -66,8 +66,8 @@ export default function OurTeams(){
   data.map(team => (
             <Section key={team.id}>
            <div className="w-11/12 mx-auto block rounded-lg bg-white">
-           <div className="max-w-full overflow-hidden mb-10 min-h-[20rem] max-h-[20rem]">
-        <div className="m-0 rounded-lg relative h-48"
+           <div className="max-w-full overflow-hidden mb-10 min-h-[23rem] max-h-[20rem]">
+        <div className="m-0 rounded-lg relative h-72"
         >
         <Image src={team.photo} fill alt="profile-picture" className="border-none rounded-t-lg" />
         </div>
@@ -80,14 +80,7 @@ export default function OurTeams(){
           </p>
         </div>
                 </div>
-                <CardBody>
-                  <Typography variant="h6" color="blue-gray">
-                    {team.f_name+" "+team.m_name}
-                  </Typography>
-                  <Typography color="gray" className="mt-3 font-normal">
-                    {team.quote}
-                  </Typography>
-                </CardBody>
+              
               </div>
           </Section>
    

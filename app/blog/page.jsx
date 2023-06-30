@@ -2,9 +2,10 @@
 import { useQuery } from "@tanstack/react-query";
 import BlogCard from "../../components/BlogCard"
 import url from "../url";
+import axios from "axios";
 
 async function fethBlogs() {
-  const res = await axios(`${url}/news`).then(response => response.data);  
+  const res = await axios(`${url}/news`);  
   return res
 }
 export default async function Blogs() {
