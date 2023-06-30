@@ -75,5 +75,3 @@ export default function HomeTeams(){
       </div>
     )
 }
-
- 
