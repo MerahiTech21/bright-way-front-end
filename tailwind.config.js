@@ -11,8 +11,9 @@ module.exports = withMT({
   theme: {
     extend: {
       fontFamily: {
-        satoshi: ['Satoshi', 'sans-serif'],
-        inter: ['Inter', 'sans-serif'],
+        display: ['Poppins', 'san-serif'],
+        body: ['Roboto'],
+        
       },
       colors: {
         'primary-orange': '#FF5722',

@@ -1,16 +1,13 @@
-"use client"
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Image from 'next/image';
 import Section from "./Section";
 import Spinner from "../components/Spinner"
 import { CardBody, Typography } from './MaterialTailwind'
-import { use, useEffect } from 'react'
-// import useSWR from 'swr'
-import url from '../app/url'
+import { useEffect } from 'react'
+import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import { useQueries, useQuery } from "@tanstack/react-query";
-
+import url from '../app/url'
 
 const responsive = {
   desktop: {
@@ -30,21 +27,20 @@ const responsive = {
   }
 };
   
-const fechTeams =  async()=>{
-  const res = await axios.get(`${url}/get_teams`).then(response => response.data)
-  return res
+const fetchTeams = async () => {
+  const res = await axios.get(`${url}/get_teams`)
+  return res.data
 }
 
-
 export default function OurTeams(){
-  const {data,isLoading, isSuccess} = useQuery({
+  const {data, isLoading, isSuccess} = useQuery({
     queryKey: ["ourTeams"],
-    queryFn: () => fechTeams()
+    queryFn: fetchTeams
   })
   
   useEffect(() => {
     if(isSuccess && data) {
-      console.log("teames=",data)
+      console.log("teams=",data)
     }
   }, [isSuccess, data])
     return (
@@ -83,8 +79,16 @@ export default function OurTeams(){
             {team.quote}
           </p>
         </div>
-      </div>
                 </div>
+                <CardBody>
+                  <Typography variant="h6" color="blue-gray">
+                    {team.f_name+" "+team.m_name}
+                  </Typography>
+                  <Typography color="gray" className="mt-3 font-normal">
+                    {team.quote}
+                  </Typography>
+                </CardBody>
+              </div>
           </Section>
    
   )):<div className="text-center text-lg text-red-500" >No Teams found</div>
