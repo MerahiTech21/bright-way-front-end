@@ -11,7 +11,7 @@ async function getData(id) {
 export default async function ServiceDetail({ params }) {
 
   const { data: serviceDetail, isSuccess } = useQuery(["serviceDetail", params.serviceId], () => {
-    return getData(params.countryId);
+    return getData(params.serviceId);
   });
 
   return (
@@ -21,7 +21,7 @@ export default async function ServiceDetail({ params }) {
           <div className="md:w-4/5 md:mx-auto mt-20 p-5 ">
             <div className="w-11-12 lg:w-4/5 mx-auto relative">
               <Image
-              src={serviceDetail?.photos[0]?.path}
+              src={serviceDetail?.photo}
               alt="blog image"
                 width={1000}
                 height={500}
