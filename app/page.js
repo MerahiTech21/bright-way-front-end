@@ -1,15 +1,12 @@
+/* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/no-unescaped-entities */
 "use client"
 import {useState} from "react"
-import Services from '../components/Services'
 import WhyChooseUs from '../components/WhyChooseUs'
 import Testimonials from '../components/Testimonials'
 import Packages from "../components/Packages"
 import HomeTeams from '../components/HomeTeam'
-import Section from '../components/Section'
-import ApplicationStatus from '../components/ApplicationStatus'
 import Link from 'next/link'
-import HomeTestimonilas from '../components/HomeTestimonilas'
 export default function Home() {
     let [isOpen, setIsOpen] = useState(false)
 
@@ -42,7 +39,7 @@ export default function Home() {
                         </div>
                     </div>
                     <div className="w-full h-full xl:flex-[.65]">
-                        <img src="/asset/hero.svg"/>
+                        <img src="/asset/hero.svg" alt="hero image"/>
                     </div> 
                 </div>
             </div>
@@ -54,12 +51,11 @@ export default function Home() {
         </div>
         <HomeTeams />
         <div className='bg-dark-gray py-10'>
-        <HomeTestimonilas />
+                <div className="w-11/12 md:w-4/5 mx-auto">
+                    <Testimonials />
+                </div>
         </div>
-        {
-        // view status
-        <ApplicationStatus show={isOpen} setShow={closeModal} />
-        }
+       
        </div>
   )
 }

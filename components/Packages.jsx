@@ -1,6 +1,6 @@
+/* eslint-disable @next/next/no-img-element */
 'use client'
 import React, { useEffect } from 'react'
-import Image from 'next/image'
 import Spinner from './Spinner'
 import url from '../app/url'
 import { useQuery } from '@tanstack/react-query'

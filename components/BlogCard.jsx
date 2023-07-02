@@ -20,10 +20,10 @@ const BlogsCard = async ({blogs}) => {
            {
               blogs && blogs.map((blog) => (
                 <Section key={blog.id}>
-              <div className="w-full rounded-2xl p-5 md:flex lg:gap-10 border-solid border-2 border-primary shadow-2xl">
+              <div className="w-full rounded-2xl p-5 md:flex lg:gap-10 border-solid border-2 border-secondary shadow-2xl">
               <Image src={blog.photos[0]?.path} alt='blog image' width={300} height={50}/>
               <div className="flex flex-col items-start md:pl-5">
-                <p className="font-bold text-xl md:text-2xl lg:text-3xl text-primary">{blog.title}</p>
+                <p className="font-bold text-xl lg:text-2xl text-primary">{blog.title}</p>
                 <p className="font-normal text-lg">{blog.short_desc}</p>
                 <Link href={`/blog/${blog.id}`}><button className="mt-5 bg-primary rounded-md p-2 text-white font-bold text-center">READ MORE</button></Link>
               </div>
