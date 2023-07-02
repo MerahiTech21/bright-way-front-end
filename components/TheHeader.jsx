@@ -12,26 +12,28 @@ import axios from 'axios'
 import url from '../app/url'
 import { useQuery } from '@tanstack/react-query'
 const getDestinations = async () => {
-  const res = await axios.get(`${url}/destinations`).then((response) => response.data)
-  return res
+  const res = await axios.get(`${url}/destinations`)
+  return res.data
 }
-// const destinationData = getDestinations()
+
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
+
 export default function TheHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const path = usePathname()
-//  const data = use(destinationData)
- const { data, isLoading, isFetching, error, isSuccess } = useQuery({
-  queryKey: ["destinations"],
-  queryFn: () => getDestinations(),
-});
-useEffect(() => {
-  if(isSuccess && data) {
-    console.log(data)
-  }
-}, [isSuccess, data])
+
+  const { data, isLoading, isFetching, error, isSuccess } = useQuery({
+    queryKey: ["destinations"],
+    queryFn: () => getDestinations(),
+  });
+
+  useEffect(() => {
+    if(isSuccess && data) {
+      console.log(data)
+    }
+  }, [isSuccess, data])
   return (
     <Fragment>
       <header className="bg-[#FFFFFF] top-0 fixed z-50 shadow-sm w-screen">
@@ -52,10 +54,10 @@ useEffect(() => {
             </button>
           </div>
           <Popover.Group className="hidden lg:flex lg:gap-x-6 flex-1 justify-center items-center gap-10">
-            <Link href="/" className={path==='/' ?"text-xl font-semibold leading-6 mx-1 text-[#4BAA96]":"mx-1 text-xl text-[#F48E20] font-semibold leading-6 text-[#F48E20] "}>Home</Link>
-            <Link href="/about" className={path==='/about' ?"mx-1 text-xl font-semibold leading-6 text-[#F48E20]":"mx-1 text-xl font-semibold leading-6 text-[#F48E20]"}>About</Link>
+            <Link href="/" className={path==='/' ?"text-primary font-semibold text-lg":"text-[#F48E20] hover:text-primary font-semibold text-lg"}>Home</Link>
+            <Link href="/about" className={path==='/about' ?"text-primary font-semibold text-lg":"text-[#F48E20] hover:text-primary font-semibold text-lg"}>About</Link>
             <Popover className="relative">
-              <Popover.Button className="mx-1 flex items-center gap-x-1 text-xl font-semibold leading-6 text-[#F48E20]">
+              <Popover.Button className="text-[#F48E20] flex items-center font-semibold hover:text-primary lg:text-lg xl:mx-1 xl:gap-x-1 xl:text-xl xl:leading-6">
                 Destination
                 <HiChevronDown className="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
               </Popover.Button>
@@ -78,7 +80,7 @@ useEffect(() => {
                         className="group relative flex items-center gap-x-6 rounded-lg p-4 text-md leading-6 hover:bg-gray-50"
                       >
                         <div className="flex-auto hover:text-amber-400">
-                        <Popover.Button as={Link} href={`/destination/${destination.id}`} className="block font-semibold text-[#FFFFFF]" >
+                        <Popover.Button as={Link} href={`/destination/${destination.id}`} className="block font-semibold text-[#F48E20] hover:text-primary" >
                         {destination.title}
                         <span className="absolute inset-0" />
                       </Popover.Button>                      
@@ -90,12 +92,12 @@ useEffect(() => {
                 </Popover.Panel>
               </Transition>
             </Popover>
-            <Link href="/services" className={path==='/services' ?"mx-1 text-xl text-[#F48E20] font-semibold leading-6 text-[#F48E20]":"mx-1 text-xl text-[#F48E20] font-semibold leading-6 text-[#F48E20]"}>Services</Link>
-            <Link href="/blog" className={path==='/blog' ?"mx-1 text-xl text-[#F48E20] font-semibold leading-6 text-[#F48E20]":"mx-1 text-xl text-[#F48E20] font-semibold leading-6 text-[#F48E20]"}>Blog</Link>
-            <a href="#contactarea" className={path==='/contact' ?"mx-1 text-xl text-[#F48E20] font-semibold leading-6 text-[#F48E20]":"mx-1 text-xl text-[#F48E20] font-semibold leading-6 text-[#F48E20]"}>Contact</a>
-              <Link href="/applay" className={path === '/applay' ? "mx-1 text-xl text-[#F48E20] font-semibold leading-6 text-[#F48E20]" : "mx-1 text-xl text-[#F48E20] font-semibold leading-6 text-[#F48E20]"}>Applay</Link>
+            <Link href="/services" className={path==='/services' ?"text-primary font-semibold text-lg":"text-[#F48E20] hover:text-primary font-semibold text-lg"}>Services</Link>
+            <Link href="/blog" className={path==='/blog' ?"text-primary font-semibold text-lg":"text-[#F48E20] hover:text-primary font-semibold text-lg"}>Blog</Link>
+            <a href="#contactarea" className={path==='/contact' ?"text-primary font-semibold text-lg":"text-[#F48E20] hover:text-primary font-semibold text-lg"}>Contact</a>
+              <Link href="/applay" className={path === '/applay' ? "text-primary font-semibold text-lg":"text-[#F48E20] hover:text-primary font-semibold text-lg"}>Apply</Link>
           </Popover.Group>
-          <Link href="/bookconsulting" className='hidden lg:block'><button className='py-2 px-4 rounded-md flex-[.2] text-xl text-[#FFFFFF] bg-[#F48E20]'>Book Free Consulting</button></Link>
+          <Link href="/bookconsulting" className='hidden lg:block'><button className='rounded-md text-[#FFFFFF] bg-[#F48E20] hover:bg-primary p-2 text-lg'>Book Free Consulting</button></Link>
         </nav>
         <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
           <div className="fixed inset-0 z-10" />
@@ -150,7 +152,7 @@ useEffect(() => {
                   <Link href="/Services" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Services</Link>
                   <Link href="/blog" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Blog</Link>
                   <a href="#contactarea" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Contact</a>
-                    <Link href="/applay" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Applay</Link>
+                    <Link href="/applay" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Apply</Link>
                     <Link href="/bookconsulting" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Book free Consulting</Link>
                 </div>
               </div>

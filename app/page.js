@@ -20,31 +20,28 @@ export default function Home() {
 
        <div>
         <main className="">    
-            <div className="h-auto lg:h-screen bg-[#E4F1FA]">
-                <div className="w-full h-full flex flex-col lg:flex-row lg:mb-auto justify-center lg:justify-between items-center pt-12 lg:pl-20">
-                    <div className="flex flex-col lg:flex-[.3] text-center lg:text-left">
-                        <h1 className="leading-loose text-5xl lg:text-7xl text-[#F48E20] font-[900] uppercase tracking-wider">
+            <div className="h-auto xl:h-auto bg-[#E4F1FA]">
+                <div className="w-full h-full flex flex-col pt-20 justify-start items-center md:pt-32 lg:pt-32 xl:flex-row xl:justify-between">
+                    <div className="flex flex-col items text-center px-[5%] xl:flex-[.35] xl:text-left">
+                        <h1 className="leading-relaxed text-5xl text-[#F48E20] font-[900] uppercase tracking-wider xl:text-5xl lg:leading-relaxed">
                             Your Trusted
                         </h1>
-                        <h1 className="leading-loose text-5xl lg:text-7xl text-[#4BAA96] font-[900] uppercase tracking-wider">
+                        <h1 className="leading-relaxed text-5xl text-[#4BAA96] font-[900] uppercase tracking-wider lg:text-5xl lg:leading-relaxed">
                             Partner
                         </h1>
-                        <p className="text-3xl font-[500] mt-5 text-[#F48E20]">
+                        <p className="leading-relaxed text-3xl font-[500] text-[#F48E20] lg:leading-relaxed">
                         Study abroad & enhance your career prospects.
                         </p>
-                        <p className="text-xl font-[400] mt-5 text-[#000000] text-justify">
+                        <p className="text-xl font-[400] text-[#000000] px-5 mt-3 md:px-10 lg:leading-relaxed xl:px-0">
                         We've helped countless students achieve their dreams of attending top universities and pursuing rewarding careers, and we're committed to helping you achieve your full potential.
                         </p>
-                        <div className="flex mt-8 pb-0 lg:pb-0">
-                            <Link href="/applicationStatus" className="px-2 md:px-4 text-md  py-2 mr-4 bg-[#FFFFFF] border-[#FCB102] uppercase text-[#FCB102]  rounded-lg text-md hover:bg-indigo-200">
-                                YOUR APPLICATION STATUS
-                            </Link>
-                            <Link href="/programs" className="px-2 lg:px-4 py-2 text-[#FFFFFF] font-black bg-[#FCB102] uppercase rounded-lg dark:text-white hover:bg-indigo-200 hover:text-primary text-md">
+                        <div className="flex justify-center items-center mt-8 pb-1 lg:pb-2 xl:justify-start xl:items-start">
+                            <Link href="/programs" className="px-4  py-2 text-[#FFFFFF] font-black bg-[#FCB102] uppercase rounded-lg hover:bg-primary text-md md:px- 8 md:py-2 md:text-lg lg:px-4 lg:py-3">
                                 Find Programs
                             </Link>
                         </div>
-                    </div> 
-                    <div className="w-full h-full lg:flex-[.7]">
+                    </div>
+                    <div className="w-full h-full xl:flex-[.65]">
                         <img src="/asset/hero.svg"/>
                     </div> 
                 </div>

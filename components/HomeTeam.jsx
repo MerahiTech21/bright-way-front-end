@@ -44,10 +44,10 @@ export default function HomeTeams(){
     }
   }, [isSuccess, data])
     return (
-      <div className='min:w-screen bg-[#4BAA96] bg-repeat bg-cover bg-[url(/bgall.jpg)] flex flex-col items-center'>
-        <div className='min:w-screen h-full bg-primary bg-opacity-75'>
+      <div className='min:w-screen bg-contain bg-[url(/bgall.jpg)] flex flex-col items-center'>
+        <div className='min:w-screen h-full bg-primary bg-opacity-75 pb-8'>
             <div className='text-center text-4xl text-white font-mono font-bold py-10'>Our Team</div>
-            <div className='grid grid-cols-1 gap-4 px-4 md:grid-cols-4 md:gap-10 md:px-28 md:py-8'>
+            <div className='grid grid-cols-1 gap-8 px-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:py-8 xl:px-40'>
               {
                   data && data.map(team => (
                             <div key={team.id} className="">

@@ -56,7 +56,9 @@ import Packages from '../../components/Packages'
       <div className='pb-10 bg-dark-gray'>
         <div className='w-11/12 mx-auto'>
         <Section>
-        <div className='text-center text-2xl md:text-3xl font-mono font-bold py-10'> Testimonials</div>
+       <div className="text-center">
+                    <h2 className="mt-4 text-3xl font-bold text-gray-900 sm:text-4xl xl:text-5xl">Our happy clients say about us</h2>
+                </div>
           </Section>
           <Testimonials />
         </div>

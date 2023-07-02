@@ -36,8 +36,7 @@ import Section from './Section'
               </div>
               <div className='text-white'>
                   <div className='mb-3 text-2xl'>Services</div>
-                  <div>
-                      <Link href={`services/${1}`} className='text-sm hover:underline hover:text-secondary'>Family-Based Immigration Visas</Link></div>
+                  <div><Link href={`services/${1}`} className='text-sm hover:underline hover:text-secondary'>Family-Based Immigration Visas</Link></div>
                   <div><Link href={`services/${1}`} className='text-sm hover:underline hover:text-secondary'>Employment-Based Immigration Visas</Link></div>
                   <div><Link href={`services/${1}`} className='text-sm hover:underline hover:text-secondary'>Diversity Visa Program</Link></div>
                   <div><Link href={`services/${1}`} className='text-sm hover:underline hover:text-secondary'>Family-Based Immigration Visas</Link></div>
@@ -62,7 +61,7 @@ import Section from './Section'
                   <FiPhoneIncoming />
                       <span className='ml-2 text-sm'>206-353-5373</span>
                   </div>
-                  </div>
+              </div>
           </div>
           {/* <div className='w-full bg-white text-center mt-14 pt-6 pb-6 font-mono'>Copyright © 2023 | Developed by Merahi Technologies</div> */}
         </div>

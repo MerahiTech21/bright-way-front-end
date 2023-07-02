@@ -28,7 +28,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "components/HomeTestimonilas.jsx"  ],
   "exclude": [
     "node_modules"
   ]
