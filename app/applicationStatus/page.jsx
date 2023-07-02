@@ -8,7 +8,7 @@ import axios from 'axios'
 export default function Example() {
   const [code, setCode] = useState("");
   const [isLoading, setIsLoading] = useState(false)
-  const [isSuccess, setIsSuccess] = useState(true)
+  const [isSuccess, setIsSuccess] = useState(false)
   const [isError, setIsError] = useState(false)
 const [status,setStatus] =useState({})
   const sebmitCode = async (e) => { 
