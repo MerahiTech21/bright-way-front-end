@@ -1,6 +1,9 @@
+'use client'
 import React from "react"
 import Image from "next/image"
 import url from "../../url"
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
 async function getData(id) {
   const res = await axios(`${url}/services/${id}`);
   return res.data
@@ -26,7 +29,6 @@ export default async function ServiceDetail({ params }) {
             /></div>
             <h1 className="text-2xl font-bold font-sans mt-10">{serviceDetail.title }</h1>
             <div dangerouslySetInnerHTML={{__html: serviceDetail.description}}>
-        
             </div>
           </div>
         )

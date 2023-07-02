@@ -35,7 +35,7 @@ export default async function Services() {
               
               <div className="px-5 mt-5">
                 <dv className="text-lg font-semibold">
-                  <Link href={`/service${service.id}`} className="hover:text-secondary">
+                  <Link href={`/services/${service.id}`} className="hover:text-secondary">
                     {service.title}
                   </Link>
                 </dv>

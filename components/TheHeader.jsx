@@ -95,7 +95,7 @@ export default function TheHeader() {
             </Popover>
             <Link href="/services" className={path==='/services' ?"text-primary font-semibold text-lg":"text-[#F48E20] hover:text-primary font-semibold text-lg"}>Services</Link>
             <Link href="/blog" className={path==='/blog' ?"text-primary font-semibold text-lg":"text-[#F48E20] hover:text-primary font-semibold text-lg"}>Blog</Link>
-            <a href="#contactarea" className={path==='/contact' ?"text-primary font-semibold text-lg":"text-[#F48E20] hover:text-primary font-semibold text-lg"}>Contact</a>
+            <a href="/contact" className={path==='/contact' ?"text-primary font-semibold text-lg":"text-[#F48E20] hover:text-primary font-semibold text-lg"}>Contact</a>
               <Link href="/applay" className={path === '/applay' ? "text-primary font-semibold text-lg":"text-[#F48E20] hover:text-primary font-semibold text-lg"}>Apply</Link>
           </Popover.Group>
           <Link href="/bookconsulting" className='hidden lg:block'><button className='rounded-md text-[#FFFFFF] bg-[#F48E20] hover:bg-primary p-2 text-lg'>Book Free Consulting</button></Link>
