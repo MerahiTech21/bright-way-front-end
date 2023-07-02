@@ -16,7 +16,7 @@ export default async function DestinationPage ({ params }) {
   });
 
   return (
-    <div className='py-20 lg:pt-26'>
+    <div>
       {
         (isSuccess && destination) && (
           <>

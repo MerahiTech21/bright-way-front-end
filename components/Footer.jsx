@@ -11,12 +11,12 @@ import { FiPhoneIncoming } from '@react-icons/all-files/fi/FiPhoneIncoming'
 
 const Footer = () => {        
     return (
-        <section className="py-10 bg-gray-50 sm:pt-16 lg:pt-24">
+        <section className="py-10 bg-gray-50 sm:pt-16 lg:pt-24 bg-primary">
             <div className="lg:px-8 w-full">
                 <div className="flex flex-col lg:flex-row lg:justify-between lg:mx-[5%]">
                     <div className="px-4 flex-[.2] my-3 lg:px-0">
                         <img className="w-auto h-28" src="/asset/logoo.png" alt="" />
-                        <p className="text-base leading-relaxed text-gray-600 mt-7">We have helped countless students achieve their dreams of attending top universities and pursuing rewarding careers, and we are committed to helping you achieve your full potential.</p>
+                        <p className="text-base leading-relaxed text-gray-600 mt-7 text-white">We have helped countless students achieve their dreams of attending top universities and pursuing rewarding careers, and we are committed to helping you achieve your full potential.</p>
                         <ul className="flex items-center space-x-3 mt-9">
                             <li>
                                 <a href="https://www.facebook.com/profile.php?id=100094126005686&mibextid=ZbWKwL" title="" className="rounded-full bg-blue-800 transition ease-in-out delay-150  hover:rotate-12  duration-1000 flex items-center justify-center text-white w-10 h-10">
@@ -45,34 +45,34 @@ const Footer = () => {
                             </li>
                         </ul>
                     </div>
-                    <hr className='lg:hidden my-3'/>
-                    <div className='flex-[.1] my-3 px-4 lg:px-0'>
+                    <hr className='lg:hidden my-3 text-white'/>
+                    <div className='text-white flex-[.1] my-3 px-4 lg:px-0'>
                         <p className="uppercase my-3 text-2xl">Company</p>
-                        <ul className="mt-6 space-y-4">
+                        <ul className="mt-6 space-y-4 text-black">
                             <li>
-                                <a href="#" title="" className="text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Home </a>
+                                <a href="#" title="" className="text-base text-white transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Home </a>
                             </li>
                             <li>
-                                <a href="/about" title="" className="text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> About </a>
-                            </li>
-
-                            <li>
-                                <a href="/blog" title="" className="text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Blog </a>
+                                <a href="/about" title="" className="text-base text-white transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> About </a>
                             </li>
 
                             <li>
-                                <a href="/service" title="" className="text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Services</a>
+                                <a href="/blog" title="" className="text-base text-white transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Blog </a>
+                            </li>
+
+                            <li>
+                                <a href="/service" title="" className="text-base text-white transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Services</a>
                             </li>
                             <li>
-                                <a href="/contact" title="" className="text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Contact</a>
+                                <a href="/contact" title="" className="text-base text-white transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Contact</a>
                             </li>
                             <li>
-                                <a href="/contact" title="" className="text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Privacy policy</a>
+                                <a href="/contact" title="" className="text-base text-white transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Privacy policy</a>
                             </li>
                         </ul>
                     </div>
-                    <hr className='lg:hidden my-3'/>
-                    <div className='text-black flex-[.4] my-3 px-4 lg:px-0'>
+                    <hr className='lg:hidden my-3 text-white'/>
+                    <div className='text-white flex-[.4] my-3 px-4 lg:px-0'>
                         <div className='my-3 text-2xl uppercase'>Contacts</div>
                         <div className='my-2 font-bold'>Ethiopia Addis Ababa contact</div>
                         <div className='flex items-center p-1'>
@@ -98,8 +98,8 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-                <hr className="mt-16 mb-10 border-gray-200" />
-                <p className="text-sm text-center text-gray-600">© Copyright {new Date().getFullYear()}, All Rights Reserved by Kuraz Consultancy</p>
+                <hr className="mt-16 mb-10 border-white" />
+                <p className="text-sm text-center text-white">© Copyright {new Date().getFullYear()}, All Rights Reserved by Kuraz Consultancy</p>
             </div>
         </section>
 

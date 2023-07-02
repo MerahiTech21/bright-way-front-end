@@ -31,7 +31,7 @@ export default function Home() {
                         <p className="text-xl font-[400] text-[#000000] px-5 mt-3 md:px-10 lg:leading-relaxed xl:px-0">
                         We've helped countless students achieve their dreams of attending top universities and pursuing rewarding careers, and we're committed to helping you achieve your full potential.
                         </p>
-                        <div className="flex justify-center items-center mt-8 pb-1 lg:pb-5 xl:justify-start xl:items-start">
+                        <div className="flex justify-center items-center mt-8 pb-1 lg:pb-2 xl:justify-start xl:items-start">
                             <Link href="/programs" className="px-4  py-2 text-[#FFFFFF] font-black bg-[#FCB102] uppercase rounded-lg hover:bg-primary text-md md:px- 8 md:py-2 md:text-lg lg:px-4 lg:py-3">
                                 Find Programs
                             </Link>
