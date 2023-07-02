@@ -114,12 +114,10 @@ const HomeTestimonilas = () => {
                                             />
                                         </svg>
                                     </div>
-
                                     <blockquote className="flex-1 mt-8">
                                         <p className="text-lg leading-relaxed text-gray-900 font-pj">“Simply the best. Better than all the rest. I’d recommend this product to beginners and advanced users.”</p>
                                     </blockquote>
                                 </div>
-
                                 <div className="flex items-center mt-8">
                                     <img className="flex-shrink-0 object-cover rounded-full w-11 h-11" src="https://cdn.rareblocks.xyz/collection/clarity/images/testimonial/4/avatar-male-2.png" alt="" />
                                     <div className="ml-4">
@@ -129,7 +127,6 @@ const HomeTestimonilas = () => {
                                 </div>
                             </div>
                         </div>
-
                         <div className="flex flex-col overflow-hidden shadow-xl">
                             <div className="flex flex-col justify-between flex-1 p-6 bg-white lg:py-8 lg:px-7">
                                 <div className="flex-1">
@@ -160,12 +157,10 @@ const HomeTestimonilas = () => {
                                             />
                                         </svg>
                                     </div>
-
                                     <blockquote className="flex-1 mt-8">
                                         <p className="text-lg leading-relaxed text-gray-900 font-pj">“I cannot believe that I have got a brand new landing page after getting Omega. It was super easy to edit and publish.”</p>
                                     </blockquote>
                                 </div>
-
                                 <div className="flex items-center mt-8">
                                     <img className="flex-shrink-0 object-cover rounded-full w-11 h-11" src="https://cdn.rareblocks.xyz/collection/clarity/images/testimonial/4/avatar-female.png" alt="" />
                                     <div className="ml-4">
