@@ -20,7 +20,7 @@ module.exports = withMT({
         'primary': '#2C3F63',
         'secondary': '#FCB102',
         'light': '#F2F7FE',
-        'gray': '#CFE4F9',
+        'gray': '#E4F1FA',
         'dark-gray': '#CFE4F9',
         'primary-green':'#FFEB3B'
       }

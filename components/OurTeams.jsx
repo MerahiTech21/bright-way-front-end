@@ -22,7 +22,7 @@ const responsive = {
   },
   mobile: {
     breakpoint: { max: 464, min: 0 },
-    items: 1,
+    items: 2,
     slidesToSlide: 1, // optional, default to 1.
   },
 };
@@ -62,19 +62,20 @@ export default function OurTeams() {
         data.map((team) => (
           <Section key={team.id}>
             <div className="w-11/12 mx-auto block rounded-lg bg-white">
-              <div className="max-w-full overflow-hidden mb-10">
-                <div className="m-0 rounded-lg relative">
-                  <img
+              <div className="max-w-full overflow-hidden mb-10 min-h-[23rem] max-h-[20rem]">
+                <div className="m-0 rounded-lg relative h-72">
+                  <Image
                     src={team.photo}
+                    fill
                     alt="profile-picture"
                     className="border-none rounded-t-lg"
                   />
                 </div>
-                <div className="p-2">
+                <div>
                   <h6 className="font-bold pl-5 mt-2">
                     {team.f_name + " " + team.m_name}
                   </h6>
-                  <p className="mt-3 font-normal pl-5">{team.profession}</p>
+                  <p className="mt-3 font-normal pl-5">{team.quote}</p>
                 </div>
               </div>
             </div>

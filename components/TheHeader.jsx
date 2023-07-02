@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client"
 import { Fragment, useState,useEffect,use } from 'react'
 import Image from 'next/image'
@@ -80,7 +81,7 @@ export default function TheHeader() {
                         className="group relative flex items-center gap-x-6 rounded-lg p-4 text-md leading-6 hover:bg-gray-50"
                       >
                         <div className="flex-auto hover:text-amber-400">
-                        <Popover.Button as={Link} href={`/destination/${destination.id}`} className="block font-semibold text-[#F48E20] hover:text-primary" >
+                        <Popover.Button as={Link} href={`/destination/${destination.id}`} className="block font-semibold text-[#F48E20] hover:text-primary hover:cursor-pointer" >
                         {destination.title}
                         <span className="absolute inset-0" />
                       </Popover.Button>                      
@@ -94,7 +95,7 @@ export default function TheHeader() {
             </Popover>
             <Link href="/services" className={path==='/services' ?"text-primary font-semibold text-lg":"text-[#F48E20] hover:text-primary font-semibold text-lg"}>Services</Link>
             <Link href="/blog" className={path==='/blog' ?"text-primary font-semibold text-lg":"text-[#F48E20] hover:text-primary font-semibold text-lg"}>Blog</Link>
-            <a href="#contactarea" className={path==='/contact' ?"text-primary font-semibold text-lg":"text-[#F48E20] hover:text-primary font-semibold text-lg"}>Contact</a>
+            <a href="/contact" className={path==='/contact' ?"text-primary font-semibold text-lg":"text-[#F48E20] hover:text-primary font-semibold text-lg"}>Contact</a>
               <Link href="/applay" className={path === '/applay' ? "text-primary font-semibold text-lg":"text-[#F48E20] hover:text-primary font-semibold text-lg"}>Apply</Link>
           </Popover.Group>
           <Link href="/bookconsulting" className='hidden lg:block'><button className='rounded-md text-[#FFFFFF] bg-[#F48E20] hover:bg-primary p-2 text-lg'>Book Free Consulting</button></Link>
@@ -149,9 +150,10 @@ export default function TheHeader() {
                     )}
                   </Disclosure>
                   
-                  <Link href="/Services" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Services</Link>
+                  <Link href="/services" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Services</Link>
                   <Link href="/blog" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Blog</Link>
-                  <a href="#contactarea" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Contact</a>
+                  <Link href="/contact" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Contact</Link>
+
                     <Link href="/applay" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Apply</Link>
                     <Link href="/bookconsulting" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Book free Consulting</Link>
                 </div>
