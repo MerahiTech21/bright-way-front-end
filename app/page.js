@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/no-unescaped-entities */
 "use client"
 import {useState} from "react"
@@ -38,7 +39,7 @@ export default function Home() {
                         </div>
                     </div>
                     <div className="w-full h-full xl:flex-[.65]">
-                        <img src="/asset/hero.svg"/>
+                        <img src="/asset/hero.svg" alt="hero image"/>
                     </div> 
                 </div>
             </div>
@@ -50,7 +51,9 @@ export default function Home() {
         </div>
         <HomeTeams />
         <div className='bg-dark-gray py-10'>
-        <Testimonials />
+                <div className="w-11/12 md:w-4/5 mx-auto">
+                    <Testimonials />
+                </div>
         </div>
        
        </div>
