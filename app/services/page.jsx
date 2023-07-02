@@ -35,7 +35,7 @@ export default async function Services() {
               
               <div className="px-5 mt-5">
                 <dv className="text-lg font-semibold">
-                  <div className="hover:text-secondary">
+                  <div>
                     {service.title}
                   </div>
                 </dv>
