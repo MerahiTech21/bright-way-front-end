@@ -92,7 +92,7 @@ export default function TheHeader() {
                 </Popover.Panel>
               </Transition>
             </Popover>
-            <Link href="/services" className={path==='/services' ?"text-primary font-semibold text-lg":"text-[#F48E20] hover:text-primary font-semibold text-lg"}>Services</Link>
+            <Link href="/services" className={path==='/services' ?"text-primary font-semibold text-lg":"text-[#F48E20] hover:text-primary font-semibold text-lg"} @click={()setMobileMenuOpen(false)}>Services</Link>
             <Link href="/blog" className={path==='/blog' ?"text-primary font-semibold text-lg":"text-[#F48E20] hover:text-primary font-semibold text-lg"}>Blog</Link>
             <a href="#contactarea" className={path==='/contact' ?"text-primary font-semibold text-lg":"text-[#F48E20] hover:text-primary font-semibold text-lg"}>Contact</a>
               <Link href="/applay" className={path === '/applay' ? "text-primary font-semibold text-lg":"text-[#F48E20] hover:text-primary font-semibold text-lg"}>Apply</Link>
@@ -149,9 +149,9 @@ export default function TheHeader() {
                     )}
                   </Disclosure>
                   
-                  <Link href="/Services" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Services</Link>
+                  <Link href="/services" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Services</Link>
                   <Link href="/blog" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Blog</Link>
-                  <a href="#contactarea" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Contact</a>
+                  <Link href="/contact" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Contact</Link>
                     <Link href="/applay" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Apply</Link>
                     <Link href="/bookconsulting" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Book free Consulting</Link>
                 </div>

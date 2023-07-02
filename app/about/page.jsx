@@ -21,10 +21,8 @@ const AboutPage = () => {
     queryKey: ["vedio"],
     queryFn: () => getVedioAddress(),
   });
-  return (
-    
-     
-      <div>
+  return ( 
+     <div>
       <div className='bg-gray'>
       <Section>
       <div className='pt-32 text-2xl md:text-3xl text-slate-900 px-14 font-mono font-bold'>About Bright way Education consultancy</div>
@@ -41,12 +39,14 @@ const AboutPage = () => {
         </div>
           </Section>
           </div>
-          <div className='mt-5 rounded-lg self-center'>
+          {
+          data && <div className='mt-5 rounded-lg self-center'>
           <iframe width="100%" height="400"
             src={data.path+'?controls=0'} className='rounded-md'>
-          </iframe>
+           </iframe>
          
           </div>
+         }
         </div>
       </div>
       <div className='hidden lg:block'>
