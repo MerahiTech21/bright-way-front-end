@@ -1,18 +1,17 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/no-unescaped-entities */
 "use client"
-import {useState} from "react"
 import WhyChooseUs from '../components/WhyChooseUs'
 import Testimonials from '../components/Testimonials'
 import Packages from "../components/Packages"
 import HomeTeams from '../components/HomeTeam'
 import Link from 'next/link'
-export default function Home() {
-    let [isOpen, setIsOpen] = useState(false)
-
-  function closeModal() {
-    setIsOpen(false)
+export const metadata = {
+    title: 'kuraz consultancy',
+    description: 'Welcome to BrightPath Consultancy, your trusted partner in higher education. We believe that every student has unique goals, interests, and challenges, which is why we offer personalized guidance and support tailored to your needs. ',
   }
+export default function Home() {
+    
     return (
 
        <div>
@@ -50,8 +49,11 @@ export default function Home() {
             <WhyChooseUs />
         </div>
         <HomeTeams />
-        <div className='bg-dark-gray py-10'>
+        <div className='bg-dark-gray lg:'>
                 <div className="w-11/12 md:w-4/5 mx-auto">
+                <div className="text-center py-10 md:py-20">
+                <h2 className="mt-4 text-3xl font-bold text-gray-900 sm:text-4xl xl:text-5xl">Our happy clients say about us</h2>
+            </div>
                     <Testimonials />
                 </div>
         </div>

@@ -9,13 +9,13 @@ export default function Example() {
   const [code, setCode] = useState("");
   const [isLoading, setIsLoading] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
-  const [error,setError] = useState('')
-const [status,setStatus] =useState({})
-const changeHandler = (e)=>{
-  setCode(e.target.value)
-  if(e.target.value){
-    setError('')
-  }
+  const [error, setError] = useState('')
+  const [status, setStatus] = useState({})
+  const changeHandler = (e) => {
+    setCode(e.target.value)
+    if (e.target.value) {
+      setError('')
+     }
 }
   const sebmitCode = async (e) => { 
     e.preventDefault()  
@@ -75,7 +75,7 @@ return (
               size="lg"
               value={code}
               className="w-full"
-              error={error?.length? true:false}
+              error={error? true:false}
                 />
                 {error && <span className="text-red-500">{error }</span>}
               </div>
@@ -89,11 +89,11 @@ return (
       </Card>
     }
     {
-      isSuccess && <div className="px-6 mt-40 w-11/12 md:w-1/2 mx-auto border-2 border-secondary p-5 rounded-lg text-base leading-relaxed text-gray-600 bg-white">
+      isSuccess && <div className="px-6 mt-18 md:mt-32 w-11/12 md:w-1/2 mx-auto border-2 border-secondary p-5 rounded-lg text-base leading-relaxed text-gray-600 bg-white">
         <div className="text-secondary text-xl text-center">Your Application progress </div>
-        <div>Your Application Status is:{status?.status} </div>
+        <div>Your Application Status is:{status.status} </div>
         <div className="font-bold text-base leading-relaxed text-gray-600">Your Application status description </div>
-        <div>{status.status_desc}</div>
+        <div className="text-base leading-relaxed text-gray-600">{status.status_desc }</div>
            
       </div>
  }
