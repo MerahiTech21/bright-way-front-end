@@ -34,12 +34,12 @@ const Footer = () => {
                                 </a>
                             </li>
                             <li>
-                                <a href="tiktok.com/@kuraz.educational" title="" className="rounded-full bg-black transition ease-in-out delay-150  hover:rotate-12  duration-1000 flex items-center justify-center text-white w-10 h-10">
+                                <a href="https://www.tiktok.com/@kuraz.educational" title="" className="rounded-full bg-black transition ease-in-out delay-150  hover:rotate-12  duration-1000 flex items-center justify-center text-white w-10 h-10">
                                  <SiTiktok/>
                                 </a>
                             </li>
                             <li>
-                                <a href="https://www.youtube.com/@kurazeduconsultancy or https://www.youtube.com/channel/UC9gUDs1_VE6mBbJWoCfEo9g" title="" className="rounded-full bg-red-600 transition ease-in-out delay-150  hover:rotate-12  duration-1000 flex items-center justify-center text-white w-10 h-10">
+                                <a href="https://www.youtube.com/@kurazeduconsultancy" title="" className="rounded-full bg-red-600 transition ease-in-out delay-150  hover:rotate-12  duration-1000 flex items-center justify-center text-white w-10 h-10">
                                  <IoLogoYoutube/>
                                 </a>
                             </li>
