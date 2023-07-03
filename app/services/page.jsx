@@ -9,6 +9,10 @@ async function getData() {
   const res = await axios.get(`${url}/services`)
   return res.data
 }
+export const metadata = {
+  title: 'kuraz consultancy',
+  description: '...',
+}
 export default async function Services() {
   const {data: services, isSuccess} = useQuery({
     queryKey: ["services"],
@@ -29,15 +33,15 @@ export default async function Services() {
           services?.length > 0 && services.map((service) => (
             <Section key={service.id} >
               <div className="border border-secondary rounded-lg shadow-xl pb-5 min-h-[28rem] max-h-[28rem]">
-              <Link href={`/services/${service.id}`} className="text-center w-full ">
+              <div  className="text-center w-full ">
               <img alt="service icon" src={service.icon}  className="w-full min-h-[15rem] max-h-[15rem] rounded-t-lg"/>
-            </Link>          
+            </div>          
               
               <div className="px-5 mt-5">
                 <dv className="text-lg font-semibold">
-                  <Link href={`/service${service.id}`} className="hover:text-secondary">
+                  <div>
                     {service.title}
-                  </Link>
+                  </div>
                 </dv>
                 <p className="line-clamp-3 text-sm leading-6 text-gray-600">{service.short_desc}</p>
               </div>               

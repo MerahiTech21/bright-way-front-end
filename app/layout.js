@@ -15,10 +15,11 @@ const inter = Inter({
 export const metadata = {
   title: {
     template: '%s',
-    default: 'Bright Consultancy',   
+    default: 'Kuraz Consultancy',   
   },
-  description: '',
+  description: 'Welcome to BrightPath Consultancy, your trusted partner in higher education. We believe that every student has unique goals, interests, and challenges, which is why we offer personalized guidance and support tailored to your needs. ',
 }
+
 
 export default function RootLayout({ children }) {
   return (

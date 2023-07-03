@@ -13,7 +13,7 @@ import { useQuery } from "@tanstack/react-query";
 import axios from 'axios'
 import url from '../url'
 const getVedioAddress = async () => {
-  const res = await axios.get(`${url}/get_vedio`)
+  const res = await axios.get(`${url}/get_video`)
   return res.data
 }
 const AboutPage = () => {
@@ -40,9 +40,9 @@ const AboutPage = () => {
           </Section>
           </div>
           {
-          data && <div className='mt-5 rounded-lg self-center'>
+          data?.link && <div className='mt-5 rounded-lg self-center'>
           <iframe width="100%" height="400"
-            src={data.path+'?controls=0'} className='rounded-md'>
+            src={data.link+'?controls=0'} className='rounded-md'>
            </iframe>
          
           </div>
@@ -148,11 +148,11 @@ const AboutPage = () => {
     </div>
       </div>
       <div className='pb-10 bg-dark-gray'>
-        <div className='w-11/12 mx-auto'>
+        <div className='w-11/12 mx-auto pb-10 md:pb-20 '>
         <Section>
-       <div className="text-center">
-                    <h2 className="mt-4 text-3xl font-bold text-gray-900 sm:text-4xl xl:text-5xl">Our happy clients say about us</h2>
-                </div>
+        <div className="text-center py-10 md:py-20">
+                <h2 className="mt-4 text-3xl font-bold text-gray-900 sm:text-4xl xl:text-5xl">Our happy clients say about us</h2>
+            </div>
           </Section>
           <Testimonials />
         </div>
