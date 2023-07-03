@@ -9,8 +9,14 @@ export default function Example() {
   const [code, setCode] = useState("");
   const [isLoading, setIsLoading] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
-  const [isError, setIsError] = useState(false)
+  const [error,setError] = useState('')
 const [status,setStatus] =useState({})
+const changeHandler = (e)=>{
+  setCode(e.target.value)
+  if(e.target.value){
+    setError('')
+  }
+}
   const sebmitCode = async (e) => { 
     e.preventDefault()  
     if (code?.length) {
@@ -29,7 +35,7 @@ const [status,setStatus] =useState({})
       }
     }
     else {
-      setIsError('please enter your application code')
+      setError('please enter your application code')
     }
   } 
 
@@ -65,13 +71,13 @@ return (
               <Input
               type="number"
               label="application code"
-              onChange={(e) => setCode(e.target.value)}
+              onChange={changeHandler}
               size="lg"
               value={code}
               className="w-full"
-              error={isError? true:false}
+              error={error?.length? true:false}
                 />
-                {isError && <span className="text-red-500">{isError }</span>}
+                {error && <span className="text-red-500">{error }</span>}
               </div>
   </div>
             <Button className="bg-secondary flex justify-center" size="lg" onClick={sebmitCode}>
@@ -85,11 +91,9 @@ return (
     {
       isSuccess && <div className="px-6 mt-40 w-11/12 md:w-1/2 mx-auto border-2 border-secondary p-5 rounded-lg text-base leading-relaxed text-gray-600 bg-white">
         <div className="text-secondary text-xl text-center">Your Application progress </div>
-        <div>Your Application Status is:{status.statuse} </div>
+        <div>Your Application Status is:{status?.status} </div>
         <div className="font-bold text-base leading-relaxed text-gray-600">Your Application status description </div>
-        <div>The value for v-bind:style is just a plain JavaScript object that works upon some rules for binding the content. The value of the background image should be a string. So we can apply or data-bind the background image in Vue.js using the style tag and then defining the backgroundImage URL in it. It will automatically retrieve the url from the string and then display the same data content on the browser webpage.
-
-        To access the background image, make a div element and define the background image in it with url. The url will be retrieved from the JS file.</div>
+        <div>{status.status_desc}</div>
            
       </div>
  }
