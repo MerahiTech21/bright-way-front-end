@@ -61,13 +61,13 @@ const Footer = () => {
                             </li>
 
                             <li>
-                                <a href="/service" title="" className="text-base text-white transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Services</a>
+                                <a href="/services" title="" className="text-base text-white transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Services</a>
                             </li>
                             <li>
                                 <a href="/contact" title="" className="text-base text-white transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Contact</a>
                             </li>
                             <li>
-                                <a href="/contact" title="" className="text-base text-white transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Privacy policy</a>
+                                <a href="/agreements" title="" className="text-base text-white transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Privacy policy</a>
                             </li>
                         </ul>
                     </div>
